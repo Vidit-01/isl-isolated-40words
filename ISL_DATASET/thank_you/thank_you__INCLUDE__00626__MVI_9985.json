@@ -1,0 +1,22 @@
+{
+  "word": "thank you",
+  "normalized_word": "thank you",
+  "dataset": "INCLUDE",
+  "original_label": "thank you",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\INCLUDE\\extracted\\Greetings\\55. Thank you\\MVI_9985.MOV",
+  "original_filename": "MVI_9985.MOV",
+  "signer": "include_MVI_9985",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "1920x1080",
+  "duration": "2.68",
+  "license": "CC-BY-4.0",
+  "paper": "https://doi.org/10.1145/3394171.3413528",
+  "repository": "https://github.com/AI4Bharat/INCLUDE",
+  "download_url": "https://zenodo.org/records/4010759",
+  "sha256": "bbf47dbdf254daf106083a37d2401775c44ef152fe7ad586976176fe1386c3dc",
+  "phash": "fefef6e6e6f60000",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

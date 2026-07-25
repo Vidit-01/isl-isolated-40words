@@ -1,0 +1,22 @@
+{
+  "word": "read",
+  "normalized_word": "read",
+  "dataset": "CISLR",
+  "original_label": "read",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\CISLR\\videos\\OWya5pey33I.mp4",
+  "original_filename": "OWya5pey33I.mp4",
+  "signer": "action",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "300x300",
+  "duration": "4.08",
+  "license": "research (see HF card)",
+  "paper": "https://aclanthology.org/2022.emnlp-main.707",
+  "repository": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "download_url": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "sha256": "552a5269979548a129136f0699a50cddf464b91f2a78b850a0f97215ca79af99",
+  "phash": "ffe7efefc7c3c7c3",
+  "quality_score": "0.85",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

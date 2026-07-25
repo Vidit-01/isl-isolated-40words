@@ -1,0 +1,22 @@
+{
+  "word": "eat",
+  "normalized_word": "eat",
+  "dataset": "ISL500",
+  "original_label": "eat",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\ISL500\\Videos\\User003\\Eat__session132__clip022.mp4",
+  "original_filename": "Eat__session132__clip022.mp4",
+  "signer": "User003",
+  "split": "",
+  "fps": "29.583333333333332",
+  "resolution": "2560x1440",
+  "duration": "6.511",
+  "license": "see HF card",
+  "paper": "",
+  "repository": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "download_url": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "sha256": "bf952624f87a7b22e3ebcb9bd94af61e16e046872541068234cd580a992969ba",
+  "phash": "e7e7e7e7e7e74343",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

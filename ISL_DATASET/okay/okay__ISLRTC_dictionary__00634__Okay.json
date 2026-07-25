@@ -1,0 +1,22 @@
+{
+  "word": "okay",
+  "normalized_word": "okay",
+  "dataset": "ISLRTC_dictionary",
+  "original_label": "Okay",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\ISLRTC_dict\\O\\Okay.mp4",
+  "original_filename": "Okay.mp4",
+  "signer": "islrtc_dict",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "1920x1080",
+  "duration": "4.0",
+  "license": "Government open data / check data.gov.in",
+  "paper": "",
+  "repository": "https://huggingface.co/datasets/Vignesh3816/Indian_Sign_Language_Data.gov_Rencoded",
+  "download_url": "https://www.data.gov.in/resource/indian-sign-language-dictionary-till-january-2024",
+  "sha256": "19190561296706be2fd2b3bb8751338962ec50d69474e4afba1c1bbfa6cf5453",
+  "phash": "fffff7e7e3e3e3e3",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

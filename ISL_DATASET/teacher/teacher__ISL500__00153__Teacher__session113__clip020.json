@@ -1,0 +1,22 @@
+{
+  "word": "teacher",
+  "normalized_word": "teacher",
+  "dataset": "ISL500",
+  "original_label": "teacher",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\ISL500\\Videos\\User003\\Teacher__session113__clip020.mp4",
+  "original_filename": "Teacher__session113__clip020.mp4",
+  "signer": "User003",
+  "split": "",
+  "fps": "29.583333333333332",
+  "resolution": "2560x1440",
+  "duration": "4.8",
+  "license": "see HF card",
+  "paper": "",
+  "repository": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "download_url": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "sha256": "ec3c91eb28bcf2fab66d9fe0a88460d0840b4a0819c8de4f1c276b3292bc6f21",
+  "phash": "e6e6eefef4e0c040",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

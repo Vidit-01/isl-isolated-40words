@@ -1,0 +1,22 @@
+{
+  "word": "student",
+  "normalized_word": "student",
+  "dataset": "CISLR",
+  "original_label": "student",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\CISLR\\videos\\Y66DFt19PyE.mp4",
+  "original_filename": "Y66DFt19PyE.mp4",
+  "signer": "profession",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "300x300",
+  "duration": "2.36",
+  "license": "research (see HF card)",
+  "paper": "https://aclanthology.org/2022.emnlp-main.707",
+  "repository": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "download_url": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "sha256": "8285f39bfad31771a18928c848692b64ff7ec09d5b1b1d3de4c29b069cad42df",
+  "phash": "ffe7e7e7838141c3",
+  "quality_score": "0.85",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

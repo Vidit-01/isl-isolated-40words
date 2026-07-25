@@ -1,0 +1,22 @@
+{
+  "word": "friend",
+  "normalized_word": "friend",
+  "dataset": "CISLR",
+  "original_label": "friend",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\CISLR\\videos\\HiKegjOx1kw.mp4",
+  "original_filename": "HiKegjOx1kw.mp4",
+  "signer": "relation",
+  "split": "",
+  "fps": "30.0",
+  "resolution": "300x300",
+  "duration": "9.633333",
+  "license": "research (see HF card)",
+  "paper": "https://aclanthology.org/2022.emnlp-main.707",
+  "repository": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "download_url": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "sha256": "c4d9e6fd925c34f597449b7dd0024288241546bd1fe868f0e298e13b6f5cd8da",
+  "phash": "000000207c7c7c38",
+  "quality_score": "0.85",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

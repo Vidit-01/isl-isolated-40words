@@ -1,0 +1,22 @@
+{
+  "word": "thank you",
+  "normalized_word": "thank you",
+  "dataset": "CISLR",
+  "original_label": "thank you",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\CISLR\\videos\\-4MbWP5T-cU.mp4",
+  "original_filename": "-4MbWP5T-cU.mp4",
+  "signer": "gesture",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "300x300",
+  "duration": "3.0",
+  "license": "research (see HF card)",
+  "paper": "https://aclanthology.org/2022.emnlp-main.707",
+  "repository": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "download_url": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "sha256": "6c001d28f7744c183d08a81c64226df6f0547c82097670cb3ec2a33a27507170",
+  "phash": "ffefe7ffe381c181",
+  "quality_score": "0.85",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

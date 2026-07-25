@@ -1,0 +1,22 @@
+{
+  "word": "go",
+  "normalized_word": "go",
+  "dataset": "ISL500",
+  "original_label": "go",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\ISL500\\Videos\\User002\\Go__session160__clip026.mp4",
+  "original_filename": "Go__session160__clip026.mp4",
+  "signer": "User002",
+  "split": "",
+  "fps": "29.583333333333332",
+  "resolution": "2560x1440",
+  "duration": "2.062",
+  "license": "see HF card",
+  "paper": "",
+  "repository": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "download_url": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "sha256": "97cde012b1b777489577e1abeb802f78c11246f79f374590dd8bcfdfb2e2d148",
+  "phash": "e7e7f7f7c7c38383",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

@@ -1,0 +1,22 @@
+{
+  "word": "friend",
+  "normalized_word": "friend",
+  "dataset": "INCLUDE",
+  "original_label": "friend",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\INCLUDE\\extracted\\People\\81. Friend\\MVI_4997.MOV",
+  "original_filename": "MVI_4997.MOV",
+  "signer": "include_MVI_4997",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "1920x1080",
+  "duration": "1.84",
+  "license": "CC-BY-4.0",
+  "paper": "https://doi.org/10.1145/3394171.3413528",
+  "repository": "https://github.com/AI4Bharat/INCLUDE",
+  "download_url": "https://zenodo.org/records/4010759",
+  "sha256": "2be6781606d2fb36dca3f4e5aeff56396f1b75c699a364d065d97512eb9ac743",
+  "phash": "7f7f6767e7670000",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

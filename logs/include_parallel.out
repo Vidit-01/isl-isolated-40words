@@ -1,0 +1,23 @@
+SKIP complete Pronouns_2of2.zip
+SKIP complete Places_4of4.zip
+SKIP complete Places_3of4.zip
+SKIP complete Places_2of4.zip
+SKIP complete Days_and_Time_3of3.zip
+SKIP complete Greetings_1of2.zip
+SKIP complete Greetings_2of2.zip
+QUEUE 11 downloads with 3 workers
+START Pronouns_1of2.zip
+START People_5of5.zipSTART Places_1of4.zip
+
+FAIL People_5of5.zip size=1302809615 expected=1301122063 secs=290
+START People_4of5.zip
+START People_3of5.zip
+START Days_and_Time_2of3.zip
+START Days_and_Time_1of3.zip
+START People_2of5.zip
+START People_1of5.zip
+FAIL People_4of5.zip size=1343948328 expected=1303778856 secs=3808
+START Jobs_2of2.zip
+FAIL Days_and_Time_1of3.zip size=1244254467 expected=1244115203 secs=3571
+START Jobs_1of2.zip
+FAIL Jobs_1of2.zip size=1524465771 expected=1503117419 secs=3098

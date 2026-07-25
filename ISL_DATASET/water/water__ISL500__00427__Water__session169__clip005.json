@@ -1,0 +1,22 @@
+{
+  "word": "water",
+  "normalized_word": "water",
+  "dataset": "ISL500",
+  "original_label": "water",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\ISL500\\Videos\\User013\\Water__session169__clip005.mp4",
+  "original_filename": "Water__session169__clip005.mp4",
+  "signer": "User013",
+  "split": "",
+  "fps": "29.583333333333332",
+  "resolution": "2560x1440",
+  "duration": "4.726",
+  "license": "see HF card",
+  "paper": "",
+  "repository": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "download_url": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "sha256": "71e9206e21a2872854de9b2ea167bc5f159e9949cfcb0204acd915ad9af29051",
+  "phash": "f7e7f7e7e7c2c0c0",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

@@ -1,0 +1,22 @@
+{
+  "word": "tea",
+  "normalized_word": "tea",
+  "dataset": "CISLR",
+  "original_label": "tea",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\CISLR\\videos\\l7GQ-fR-DsA.mp4",
+  "original_filename": "l7GQ-fR-DsA.mp4",
+  "signer": "foods and drinks",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "300x300",
+  "duration": "5.52",
+  "license": "research (see HF card)",
+  "paper": "https://aclanthology.org/2022.emnlp-main.707",
+  "repository": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "download_url": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "sha256": "ff154c3471d110323470a6908003d2d336a2ff298fc85b3f120759d962b7df65",
+  "phash": "ffe7e7f7c18101c3",
+  "quality_score": "0.85",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

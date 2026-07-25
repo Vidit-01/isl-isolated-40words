@@ -1,0 +1,22 @@
+{
+  "word": "school",
+  "normalized_word": "school",
+  "dataset": "ISL500",
+  "original_label": "school",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\ISL500\\Videos\\User011\\School__session141__clip003.mp4",
+  "original_filename": "School__session141__clip003.mp4",
+  "signer": "User011",
+  "split": "",
+  "fps": "29.583333333333332",
+  "resolution": "2560x1440",
+  "duration": "4.408",
+  "license": "see HF card",
+  "paper": "",
+  "repository": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "download_url": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "sha256": "1b49e356fec6a14d3bfe5e0c0569271f0e732b18fb3067ade64b124f5ea52f96",
+  "phash": "e4f6f6f2f0c0d0e0",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

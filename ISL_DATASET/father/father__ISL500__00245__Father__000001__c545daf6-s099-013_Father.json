@@ -1,0 +1,22 @@
+{
+  "word": "father",
+  "normalized_word": "father",
+  "dataset": "ISL500",
+  "original_label": "father",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\ISL500\\Videos\\User007\\Father__000001__c545daf6-s099-013_Father.mp4",
+  "original_filename": "Father__000001__c545daf6-s099-013_Father.mp4",
+  "signer": "User007",
+  "split": "",
+  "fps": "29.583333333333332",
+  "resolution": "2560x1440",
+  "duration": "5.847887",
+  "license": "see HF card",
+  "paper": "",
+  "repository": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "download_url": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "sha256": "bcde7beaf35eff3ff644b0c7280a629dfb915451ab08edfb4c94e677ebf786b1",
+  "phash": "e7e7c7d7c7c3c303",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

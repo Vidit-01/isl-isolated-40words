@@ -1,0 +1,22 @@
+{
+  "word": "where",
+  "normalized_word": "where",
+  "dataset": "ISL500",
+  "original_label": "where",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\ISL500\\Videos\\User013\\Where__session169__clip016.mp4",
+  "original_filename": "Where__session169__clip016.mp4",
+  "signer": "User013",
+  "split": "",
+  "fps": "29.5",
+  "resolution": "2560x1440",
+  "duration": "4.046",
+  "license": "see HF card",
+  "paper": "",
+  "repository": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "download_url": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "sha256": "786c2e1e2e13cc8bb0720747c0d91aabeadff38fb5adf0c804e045a044ae3563",
+  "phash": "e7e7e7e7c7e2c2c0",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

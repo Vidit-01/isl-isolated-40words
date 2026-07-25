@@ -1,0 +1,22 @@
+{
+  "word": "hello",
+  "normalized_word": "hello",
+  "dataset": "INCLUDE",
+  "original_label": "hello",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\INCLUDE\\extracted\\Greetings\\48. Hello\\MVI_0037.MOV",
+  "original_filename": "MVI_0037.MOV",
+  "signer": "include_MVI_0037",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "1920x1080",
+  "duration": "1.96",
+  "license": "CC-BY-4.0",
+  "paper": "https://doi.org/10.1145/3394171.3413528",
+  "repository": "https://github.com/AI4Bharat/INCLUDE",
+  "download_url": "https://zenodo.org/records/4010759",
+  "sha256": "4d7a45162aea94748f6e34f56a389ff90aa21702480a498f534dfaa63f07d61c",
+  "phash": "7f7f7767f7744080",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

@@ -1,0 +1,22 @@
+{
+  "word": "stand",
+  "normalized_word": "stand",
+  "dataset": "ISLRTC_dictionary",
+  "original_label": "Stand",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\ISLRTC_dict\\S\\Stand.mp4",
+  "original_filename": "Stand.mp4",
+  "signer": "islrtc_dict",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "1920x1080",
+  "duration": "3.08",
+  "license": "Government open data / check data.gov.in",
+  "paper": "",
+  "repository": "https://huggingface.co/datasets/Vignesh3816/Indian_Sign_Language_Data.gov_Rencoded",
+  "download_url": "https://www.data.gov.in/resource/indian-sign-language-dictionary-till-january-2024",
+  "sha256": "13f5b3c2e6c59131278eca286ba57c76f3802975f781a414b9cf3560be11f81f",
+  "phash": "ffa7ffe7c7c7e7e7",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

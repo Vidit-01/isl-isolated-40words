@@ -1,0 +1,22 @@
+{
+  "word": "friend",
+  "normalized_word": "friend",
+  "dataset": "ISL500",
+  "original_label": "friend",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\ISL500\\Videos\\User012\\Friend__session319__clip006.mp4",
+  "original_filename": "Friend__session319__clip006.mp4",
+  "signer": "User012",
+  "split": "",
+  "fps": "29.583333333333332",
+  "resolution": "2560x1440",
+  "duration": "5.354",
+  "license": "see HF card",
+  "paper": "",
+  "repository": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "download_url": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "sha256": "700820efaf72f6a62b8cbb07fcf6073fa7d060cfa459e8e6483b34cca659889b",
+  "phash": "e3f3f3f3f7ffe706",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

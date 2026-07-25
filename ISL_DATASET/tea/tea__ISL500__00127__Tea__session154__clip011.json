@@ -1,0 +1,22 @@
+{
+  "word": "tea",
+  "normalized_word": "tea",
+  "dataset": "ISL500",
+  "original_label": "tea",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\ISL500\\Videos\\User002\\Tea__session154__clip011.mp4",
+  "original_filename": "Tea__session154__clip011.mp4",
+  "signer": "User002",
+  "split": "",
+  "fps": "29.583333333333332",
+  "resolution": "2560x1440",
+  "duration": "3.161",
+  "license": "see HF card",
+  "paper": "",
+  "repository": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "download_url": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "sha256": "466a05abd46f9cd7407f12734d10758ddfc631eb9a8845fb9c9991c072ed60e0",
+  "phash": "e7e7e7e7e7c38303",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

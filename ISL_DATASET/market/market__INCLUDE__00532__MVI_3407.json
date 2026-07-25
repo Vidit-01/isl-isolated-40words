@@ -1,0 +1,22 @@
+{
+  "word": "market",
+  "normalized_word": "market",
+  "dataset": "INCLUDE",
+  "original_label": "market",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\INCLUDE\\extracted\\Places\\32. Market\\MVI_3407.MOV",
+  "original_filename": "MVI_3407.MOV",
+  "signer": "include_MVI_3407",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "1920x1080",
+  "duration": "2.44",
+  "license": "CC-BY-4.0",
+  "paper": "https://doi.org/10.1145/3394171.3413528",
+  "repository": "https://github.com/AI4Bharat/INCLUDE",
+  "download_url": "https://zenodo.org/records/4010759",
+  "sha256": "6cc05d770794dab9276dd95d2149c2d9e1fadaa1df33a1ce90a85ee4e361c14c",
+  "phash": "7f7f7f6767770000",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

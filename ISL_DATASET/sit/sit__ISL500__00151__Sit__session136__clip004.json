@@ -1,0 +1,22 @@
+{
+  "word": "sit",
+  "normalized_word": "sit",
+  "dataset": "ISL500",
+  "original_label": "sit",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\ISL500\\Videos\\User003\\Sit__session136__clip004.mp4",
+  "original_filename": "Sit__session136__clip004.mp4",
+  "signer": "User003",
+  "split": "",
+  "fps": "29.583333333333332",
+  "resolution": "2560x1440",
+  "duration": "6.093",
+  "license": "see HF card",
+  "paper": "",
+  "repository": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "download_url": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "sha256": "438dcb1856551f33a880ef1b93c3fa0f5c37e8722c23ed794021b73c77d27092",
+  "phash": "e7e7e7e7e7434303",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

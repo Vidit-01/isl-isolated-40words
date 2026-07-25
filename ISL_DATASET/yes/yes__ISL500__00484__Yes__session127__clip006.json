@@ -1,0 +1,22 @@
+{
+  "word": "yes",
+  "normalized_word": "yes",
+  "dataset": "ISL500",
+  "original_label": "yes",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\ISL500\\Videos\\User015\\Yes__session127__clip006.mp4",
+  "original_filename": "Yes__session127__clip006.mp4",
+  "signer": "User015",
+  "split": "",
+  "fps": "29.583333333333332",
+  "resolution": "2560x1440",
+  "duration": "4.636",
+  "license": "see HF card",
+  "paper": "",
+  "repository": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "download_url": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "sha256": "5e55ee44993bbc8adf8632f15ea946a771b88cf691d67c9cdf7c7c23064f55c1",
+  "phash": "87878785953f3d1d",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

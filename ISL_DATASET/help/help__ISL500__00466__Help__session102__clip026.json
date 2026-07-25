@@ -1,0 +1,22 @@
+{
+  "word": "help",
+  "normalized_word": "help",
+  "dataset": "ISL500",
+  "original_label": "help",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\ISL500\\Videos\\User015\\Help__session102__clip026.mp4",
+  "original_filename": "Help__session102__clip026.mp4",
+  "signer": "User015",
+  "split": "",
+  "fps": "29.583333333333332",
+  "resolution": "2560x1440",
+  "duration": "5.32",
+  "license": "see HF card",
+  "paper": "",
+  "repository": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "download_url": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "sha256": "935ab0f3864bc94005abfe9680a3447fa313b03de632a9e719f3d049148ee4cb",
+  "phash": "e7e7fff7e9c18181",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

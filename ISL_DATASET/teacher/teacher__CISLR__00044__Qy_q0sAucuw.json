@@ -1,0 +1,22 @@
+{
+  "word": "teacher",
+  "normalized_word": "teacher",
+  "dataset": "CISLR",
+  "original_label": "teacher",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\CISLR\\videos\\Qy_q0sAucuw.mp4",
+  "original_filename": "Qy_q0sAucuw.mp4",
+  "signer": "profession",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "300x300",
+  "duration": "4.32",
+  "license": "research (see HF card)",
+  "paper": "https://aclanthology.org/2022.emnlp-main.707",
+  "repository": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "download_url": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "sha256": "38800f295ddf63ee70d0355f4887bfcc7ac93ab21229801560557de3fdc2f287",
+  "phash": "ffefffefcbcbc3c3",
+  "quality_score": "0.85",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

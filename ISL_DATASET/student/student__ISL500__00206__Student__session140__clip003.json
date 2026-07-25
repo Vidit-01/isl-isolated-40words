@@ -1,0 +1,22 @@
+{
+  "word": "student",
+  "normalized_word": "student",
+  "dataset": "ISL500",
+  "original_label": "student",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\ISL500\\Videos\\User005\\Student__session140__clip003.mp4",
+  "original_filename": "Student__session140__clip003.mp4",
+  "signer": "User005",
+  "split": "",
+  "fps": "29.583333333333332",
+  "resolution": "2560x1440",
+  "duration": "4.712",
+  "license": "see HF card",
+  "paper": "",
+  "repository": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "download_url": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "sha256": "db546a0e18322fad489f3b531264cd47d8fa089a2ec80019bf5ef4faa6e4804b",
+  "phash": "ffffe7e7f7e6c2c0",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

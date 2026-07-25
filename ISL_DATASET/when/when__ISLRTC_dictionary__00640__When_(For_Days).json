@@ -1,0 +1,22 @@
+{
+  "word": "when",
+  "normalized_word": "when",
+  "dataset": "ISLRTC_dictionary",
+  "original_label": "When_(For_Days)",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\ISLRTC_dict\\W\\When_(For_Days).mp4",
+  "original_filename": "When_(For_Days).mp4",
+  "signer": "islrtc_dict",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "1920x1080",
+  "duration": "2.72",
+  "license": "Government open data / check data.gov.in",
+  "paper": "",
+  "repository": "https://huggingface.co/datasets/Vignesh3816/Indian_Sign_Language_Data.gov_Rencoded",
+  "download_url": "https://www.data.gov.in/resource/indian-sign-language-dictionary-till-january-2024",
+  "sha256": "d99be9e1748204d02e1ea0855f19a45f84c411a9917009be610528c8591af6b7",
+  "phash": "ff273fe7e3e3e7e7",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "Needs Manual Review"
+}

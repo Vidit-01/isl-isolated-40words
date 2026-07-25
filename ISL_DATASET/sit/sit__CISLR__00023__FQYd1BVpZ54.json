@@ -1,0 +1,22 @@
+{
+  "word": "sit",
+  "normalized_word": "sit",
+  "dataset": "CISLR",
+  "original_label": "sit",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\CISLR\\videos\\FQYd1BVpZ54.mp4",
+  "original_filename": "FQYd1BVpZ54.mp4",
+  "signer": "action",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "300x300",
+  "duration": "3.0",
+  "license": "research (see HF card)",
+  "paper": "https://aclanthology.org/2022.emnlp-main.707",
+  "repository": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "download_url": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "sha256": "600bc09eaabf35beb455d0a1ae3c1008a2920de9b789dd9196e5fb080e12ab15",
+  "phash": "ffffefffc3c381c3",
+  "quality_score": "0.85",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

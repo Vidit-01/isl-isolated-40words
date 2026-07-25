@@ -1,0 +1,22 @@
+{
+  "word": "you",
+  "normalized_word": "you",
+  "dataset": "ISL500",
+  "original_label": "you",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\ISL500\\Videos\\User014\\You__session132__clip026.mp4",
+  "original_filename": "You__session132__clip026.mp4",
+  "signer": "User014",
+  "split": "",
+  "fps": "29.583333333333332",
+  "resolution": "2560x1440",
+  "duration": "3.428",
+  "license": "see HF card",
+  "paper": "",
+  "repository": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "download_url": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "sha256": "90c17cf8b44cce30390989297aac1751c4c2452f7437962fa74566319a44e305",
+  "phash": "efefefefcfc30300",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

@@ -1,0 +1,22 @@
+{
+  "word": "please",
+  "normalized_word": "please",
+  "dataset": "ISL500",
+  "original_label": "please",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\ISL500\\Videos\\User012\\Please__session159__clip001.mp4",
+  "original_filename": "Please__session159__clip001.mp4",
+  "signer": "User012",
+  "split": "",
+  "fps": "29.583333333333332",
+  "resolution": "2560x1440",
+  "duration": "4.096",
+  "license": "see HF card",
+  "paper": "",
+  "repository": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "download_url": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "sha256": "68b43d4c350d38f25690360ef25972e580cec9da1857df288a8f10ac6466f86b",
+  "phash": "e7e7e7e7e7672f26",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

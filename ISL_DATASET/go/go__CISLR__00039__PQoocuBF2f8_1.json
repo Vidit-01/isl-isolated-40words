@@ -1,0 +1,22 @@
+{
+  "word": "go",
+  "normalized_word": "go",
+  "dataset": "CISLR",
+  "original_label": "go",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\CISLR\\videos\\PQoocuBF2f8_1.mp4",
+  "original_filename": "PQoocuBF2f8_1.mp4",
+  "signer": "process",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "300x300",
+  "duration": "2.52",
+  "license": "research (see HF card)",
+  "paper": "https://aclanthology.org/2022.emnlp-main.707",
+  "repository": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "download_url": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "sha256": "c214c903c0cc91e05ffd757397e50526a96dda7857cb5edc1481a364d09ae318",
+  "phash": "fff7ffffc38181c1",
+  "quality_score": "0.85",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

@@ -1,0 +1,22 @@
+{
+  "word": "stop",
+  "normalized_word": "stop",
+  "dataset": "ISLRTC_dictionary",
+  "original_label": "Stop",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\ISLRTC_dict\\S\\Stop.mp4",
+  "original_filename": "Stop.mp4",
+  "signer": "islrtc_dict",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "1920x1080",
+  "duration": "4.28",
+  "license": "Government open data / check data.gov.in",
+  "paper": "",
+  "repository": "https://huggingface.co/datasets/Vignesh3816/Indian_Sign_Language_Data.gov_Rencoded",
+  "download_url": "https://www.data.gov.in/resource/indian-sign-language-dictionary-till-january-2024",
+  "sha256": "086b758e80224f24dd0551241717926fd40c3f22ea909b01e92de9b0fcbf30ab",
+  "phash": "ffeffff7c7e7e7e6",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

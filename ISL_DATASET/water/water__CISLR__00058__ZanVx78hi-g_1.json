@@ -1,0 +1,22 @@
+{
+  "word": "water",
+  "normalized_word": "water",
+  "dataset": "CISLR",
+  "original_label": "water",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\CISLR\\videos\\ZanVx78hi-g_1.mp4",
+  "original_filename": "ZanVx78hi-g_1.mp4",
+  "signer": "substance",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "300x300",
+  "duration": "3.52",
+  "license": "research (see HF card)",
+  "paper": "https://aclanthology.org/2022.emnlp-main.707",
+  "repository": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "download_url": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "sha256": "1d6eff4858a5976f0d9f07e02a09d6cdf0213f9be8e00b5da254b71ff586c200",
+  "phash": "00c020003e3e3e3c",
+  "quality_score": "0.85",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

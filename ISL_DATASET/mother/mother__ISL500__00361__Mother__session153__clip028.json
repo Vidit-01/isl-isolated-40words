@@ -1,0 +1,22 @@
+{
+  "word": "mother",
+  "normalized_word": "mother",
+  "dataset": "ISL500",
+  "original_label": "mother",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\ISL500\\Videos\\User011\\Mother__session153__clip028.mp4",
+  "original_filename": "Mother__session153__clip028.mp4",
+  "signer": "User011",
+  "split": "",
+  "fps": "29.583333333333332",
+  "resolution": "2560x1440",
+  "duration": "3.844",
+  "license": "see HF card",
+  "paper": "",
+  "repository": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "download_url": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "sha256": "621d261269b641568599867ffdd2b435c27f482b565ffebe791f43e34b93577c",
+  "phash": "e4f6e6f0f0c0f0e0",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

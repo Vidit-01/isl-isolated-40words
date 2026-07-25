@@ -1,0 +1,22 @@
+{
+  "word": "stop",
+  "normalized_word": "stop",
+  "dataset": "CISLR",
+  "original_label": "stop",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\CISLR\\videos\\FHwjyQeLNuY.mp4",
+  "original_filename": "FHwjyQeLNuY.mp4",
+  "signer": "stage",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "300x300",
+  "duration": "4.32",
+  "license": "research (see HF card)",
+  "paper": "https://aclanthology.org/2022.emnlp-main.707",
+  "repository": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "download_url": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "sha256": "f137dc67b2eb2f19ae05aaeb1ce04231bf24efe020932fb860b3d2b51b45c36a",
+  "phash": "ffe7ffffdbd1e1c3",
+  "quality_score": "0.85",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

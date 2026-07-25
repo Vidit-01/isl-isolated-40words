@@ -1,0 +1,22 @@
+{
+  "word": "no",
+  "normalized_word": "no",
+  "dataset": "ISL500",
+  "original_label": "no",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\ISL500\\Videos\\User007\\No__000001__c545daf6-s132-008_No.mp4",
+  "original_filename": "No__000001__c545daf6-s132-008_No.mp4",
+  "signer": "User007",
+  "split": "",
+  "fps": "29.666666666666668",
+  "resolution": "2560x1440",
+  "duration": "4.685393",
+  "license": "see HF card",
+  "paper": "",
+  "repository": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "download_url": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "sha256": "d838bf8dd57198a2b7afa3bb675a48e4af9e9cbd3f31927d9af659367ecf1034",
+  "phash": "e7e7f7f7e7c30300",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

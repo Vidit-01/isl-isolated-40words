@@ -1,0 +1,22 @@
+{
+  "word": "market",
+  "normalized_word": "market",
+  "dataset": "ISL500",
+  "original_label": "market",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\ISL500\\Videos\\User015\\Market__session124__clip000.mp4",
+  "original_filename": "Market__session124__clip000.mp4",
+  "signer": "User015",
+  "split": "",
+  "fps": "29.583333333333332",
+  "resolution": "2560x1440",
+  "duration": "5.521",
+  "license": "see HF card",
+  "paper": "",
+  "repository": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "download_url": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "sha256": "1c1c604dd96fc4408f4d17be362a7fc430e755361240afcf5463d44553d04203",
+  "phash": "878787871d3d3d1d",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

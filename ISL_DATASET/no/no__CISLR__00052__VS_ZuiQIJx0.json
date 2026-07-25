@@ -1,0 +1,22 @@
+{
+  "word": "no",
+  "normalized_word": "no",
+  "dataset": "CISLR",
+  "original_label": "no",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\CISLR\\videos\\VS_ZuiQIJx0.mp4",
+  "original_filename": "VS_ZuiQIJx0.mp4",
+  "signer": "abstract",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "300x300",
+  "duration": "4.0",
+  "license": "research (see HF card)",
+  "paper": "https://aclanthology.org/2022.emnlp-main.707",
+  "repository": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "download_url": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "sha256": "8cb39d2e7912a39f27d9c37e5ddb4fe2b4423e43e3ce070157dea11c8fafa44f",
+  "phash": "ffefffe7e1c1c3c3",
+  "quality_score": "0.85",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

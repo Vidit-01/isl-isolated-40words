@@ -1,0 +1,22 @@
+{
+  "word": "today",
+  "normalized_word": "today",
+  "dataset": "ISL500",
+  "original_label": "today",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\ISL500\\Videos\\User015\\Today__session102__clip018.mp4",
+  "original_filename": "Today__session102__clip018.mp4",
+  "signer": "User015",
+  "split": "",
+  "fps": "29.583333333333332",
+  "resolution": "2560x1440",
+  "duration": "4.681",
+  "license": "see HF card",
+  "paper": "",
+  "repository": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "download_url": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "sha256": "580d28d2e23ba380f33ff7616969ba82f52857ed4632f2330aa6f8a3dc7473d7",
+  "phash": "e7e7fff7e9c18181",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

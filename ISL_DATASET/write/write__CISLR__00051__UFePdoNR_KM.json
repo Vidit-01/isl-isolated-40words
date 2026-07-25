@@ -1,0 +1,22 @@
+{
+  "word": "write",
+  "normalized_word": "write",
+  "dataset": "CISLR",
+  "original_label": "write",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\CISLR\\videos\\UFePdoNR_KM.mp4",
+  "original_filename": "UFePdoNR_KM.mp4",
+  "signer": "action",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "300x300",
+  "duration": "3.52",
+  "license": "research (see HF card)",
+  "paper": "https://aclanthology.org/2022.emnlp-main.707",
+  "repository": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "download_url": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "sha256": "0bdb80c9eb37176ad681c7649f04374a8ffe8086eb77d7f6ce38f6056cd56ae3",
+  "phash": "ffe7e7e7838181c3",
+  "quality_score": "0.85",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

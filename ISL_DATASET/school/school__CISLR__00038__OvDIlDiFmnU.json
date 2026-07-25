@@ -1,0 +1,22 @@
+{
+  "word": "school",
+  "normalized_word": "school",
+  "dataset": "CISLR",
+  "original_label": "school",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\CISLR\\videos\\OvDIlDiFmnU.mp4",
+  "original_filename": "OvDIlDiFmnU.mp4",
+  "signer": "organisation",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "300x300",
+  "duration": "2.6",
+  "license": "research (see HF card)",
+  "paper": "https://aclanthology.org/2022.emnlp-main.707",
+  "repository": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "download_url": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "sha256": "ca6d25bbce6c31bc73ef7e668607ed957b4bf7980ca097730409b24ce4272cc4",
+  "phash": "ffe7e7ffcb818181",
+  "quality_score": "0.85",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

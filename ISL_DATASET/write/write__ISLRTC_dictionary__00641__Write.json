@@ -1,0 +1,22 @@
+{
+  "word": "write",
+  "normalized_word": "write",
+  "dataset": "ISLRTC_dictionary",
+  "original_label": "Write",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\ISLRTC_dict\\W\\Write.mp4",
+  "original_filename": "Write.mp4",
+  "signer": "islrtc_dict",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "1920x1080",
+  "duration": "3.52",
+  "license": "Government open data / check data.gov.in",
+  "paper": "",
+  "repository": "https://huggingface.co/datasets/Vignesh3816/Indian_Sign_Language_Data.gov_Rencoded",
+  "download_url": "https://www.data.gov.in/resource/indian-sign-language-dictionary-till-january-2024",
+  "sha256": "62409f44cc249fa03b62dd69eb9f04854d8653b4ca53b82906be5d94fe152065",
+  "phash": "ffa7efe7c3c7e7e7",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

@@ -1,0 +1,9 @@
+2026-07-25 15:03:44,525 | INFO | Wrote inventory (9 datasets) -> C:\Users\Vidit\OneDrive\Desktop\IPD\reports\dataset_inventory.csv
+2026-07-25 15:03:44,528 | INFO | Local finalize targets=40
+2026-07-25 15:04:02,423 | INFO | CISLR local scan: 98 videos
+2026-07-25 15:17:42,610 | INFO | ISL500 local scan: 405 videos
+2026-07-25 15:20:13,352 | INFO | INCLUDE local scan: 143 videos
+2026-07-25 15:20:23,888 | INFO | ISLRTC_dictionary local scan: 16 videos
+2026-07-25 15:20:23,973 | INFO | After dedup: 642 kept, 20 dups
+2026-07-25 15:41:09,680 | INFO | Reports written under C:\Users\Vidit\OneDrive\Desktop\IPD\reports
+FINAL=642 OUT=C:\Users\Vidit\OneDrive\Desktop\IPD\ISL_DATASET SUMMARY=C:\Users\Vidit\OneDrive\Desktop\IPD\reports\summary.md

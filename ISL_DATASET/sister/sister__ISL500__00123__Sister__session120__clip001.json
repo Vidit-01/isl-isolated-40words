@@ -1,0 +1,22 @@
+{
+  "word": "sister",
+  "normalized_word": "sister",
+  "dataset": "ISL500",
+  "original_label": "sister",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\ISL500\\Videos\\User002\\Sister__session120__clip001.mp4",
+  "original_filename": "Sister__session120__clip001.mp4",
+  "signer": "User002",
+  "split": "",
+  "fps": "29.583333333333332",
+  "resolution": "2560x1440",
+  "duration": "3.839",
+  "license": "see HF card",
+  "paper": "",
+  "repository": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "download_url": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "sha256": "2099ba70a2aee69f244d9ad99ddf1d04f42df4d1c077ec6b6e19a1ce3b7853df",
+  "phash": "e7e7e7e787838383",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

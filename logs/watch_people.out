@@ -1,0 +1,98 @@
+watching ['People_1of5.zip', 'People_2of5.zip', 'People_3of5.zip', 'People_4of5.zip', 'People_5of5.zip']
+  People_4of5.zip: 1100267520/1303778856 (84.4%)
+  People_3of5.zip: 783435920/1586966004 (49.4%)
+  People_2of5.zip: 0/1251273463 (0.0%)
+  People_1of5.zip: 259072000/1327653833 (19.5%)
+complete_parts 1/5
+  People_4of5.zip: 1157996544/1303778856 (88.8%)
+  People_3of5.zip: 786446480/1586966004 (49.6%)
+  People_2of5.zip: 51339264/1251273463 (4.1%)
+  People_1of5.zip: 287174656/1327653833 (21.6%)
+complete_parts 1/5
+  People_4of5.zip: 1204056064/1303778856 (92.4%)
+  People_3of5.zip: 789522576/1586966004 (49.8%)
+  People_2of5.zip: 104701952/1251273463 (8.4%)
+  People_1of5.zip: 332673024/1327653833 (25.1%)
+complete_parts 1/5
+  People_4of5.zip: 1255763968/1303778856 (96.3%)
+  People_3of5.zip: 792643728/1586966004 (49.9%)
+  People_2of5.zip: 148180992/1251273463 (11.8%)
+  People_1of5.zip: 363155456/1327653833 (27.4%)
+complete_parts 1/5
+  People_4of5.zip: 1284710400/1303778856 (98.5%)
+  People_3of5.zip: 796096656/1586966004 (50.2%)
+  People_2of5.zip: 186363904/1251273463 (14.9%)
+  People_1of5.zip: 399392768/1327653833 (30.1%)
+complete_parts 1/5
+validate People_4of5.zip
+extract People_4of5.zip
+  People_3of5.zip: 799955088/1586966004 (50.4%)
+  People_2of5.zip: 226738176/1251273463 (18.1%)
+  People_1of5.zip: 432422912/1327653833 (32.6%)
+complete_parts 2/5
+  People_3of5.zip: 802633872/1586966004 (50.6%)
+  People_2of5.zip: 257056768/1251273463 (20.5%)
+  People_1of5.zip: 475086848/1327653833 (35.8%)
+complete_parts 2/5
+  People_3of5.zip: 803525880/1586966004 (50.6%)
+  People_2of5.zip: 323088384/1251273463 (25.8%)
+  People_1of5.zip: 535097344/1327653833 (40.3%)
+complete_parts 2/5
+  People_3of5.zip: 803525880/1586966004 (50.6%)
+  People_2of5.zip: 382992384/1251273463 (30.6%)
+  People_1of5.zip: 571121664/1327653833 (43.0%)
+complete_parts 2/5
+  People_3of5.zip: 803525880/1586966004 (50.6%)
+  People_2of5.zip: 457314304/1251273463 (36.5%)
+  People_1of5.zip: 622596096/1327653833 (46.9%)
+complete_parts 2/5
+  People_3of5.zip: 803525880/1586966004 (50.6%)
+  People_2of5.zip: 544014336/1251273463 (43.5%)
+  People_1of5.zip: 660713472/1327653833 (49.8%)
+complete_parts 2/5
+  People_3of5.zip: 803525880/1586966004 (50.6%)
+  People_2of5.zip: 638935040/1251273463 (51.1%)
+  People_1of5.zip: 737517568/1327653833 (55.6%)
+complete_parts 2/5
+  People_3of5.zip: 803525880/1586966004 (50.6%)
+  People_2of5.zip: 704679936/1251273463 (56.3%)
+  People_1of5.zip: 809013248/1327653833 (60.9%)
+complete_parts 2/5
+  People_3of5.zip: 803525880/1586966004 (50.6%)
+  People_2of5.zip: 776597504/1251273463 (62.1%)
+  People_1of5.zip: 852189184/1327653833 (64.2%)
+complete_parts 2/5
+  People_3of5.zip: 803525880/1586966004 (50.6%)
+  People_2of5.zip: 864808960/1251273463 (69.1%)
+  People_1of5.zip: 899911680/1327653833 (67.8%)
+complete_parts 2/5
+  People_3of5.zip: 803525880/1586966004 (50.6%)
+  People_2of5.zip: 920522752/1251273463 (73.6%)
+  People_1of5.zip: 944750592/1327653833 (71.2%)
+complete_parts 2/5
+  People_3of5.zip: 803525880/1586966004 (50.6%)
+  People_2of5.zip: 962760704/1251273463 (76.9%)
+  People_1of5.zip: 996360192/1327653833 (75.0%)
+complete_parts 2/5
+  People_3of5.zip: 803525880/1586966004 (50.6%)
+  People_2of5.zip: 1047736320/1251273463 (83.7%)
+  People_1of5.zip: 1049579520/1327653833 (79.1%)
+complete_parts 2/5
+  People_3of5.zip: 803525880/1586966004 (50.6%)
+  People_2of5.zip: 1091612672/1251273463 (87.2%)
+  People_1of5.zip: 1068204032/1327653833 (80.5%)
+complete_parts 2/5
+  People_3of5.zip: 803525880/1586966004 (50.6%)
+  People_2of5.zip: 1143693312/1251273463 (91.4%)
+  People_1of5.zip: 1123311616/1327653833 (84.6%)
+complete_parts 2/5
+  People_3of5.zip: 803525880/1586966004 (50.6%)
+  People_2of5.zip: 1226043392/1251273463 (98.0%)
+  People_1of5.zip: 1188364288/1327653833 (89.5%)
+complete_parts 2/5
+  People_3of5.zip: 803525880/1586966004 (50.6%)
+validate People_2of5.zip
+extract People_2of5.zip
+  People_1of5.zip: 1278349312/1327653833 (96.3%)
+complete_parts 3/5
+ENOUGH_PEOPLE

@@ -1,0 +1,22 @@
+{
+  "word": "okay",
+  "normalized_word": "okay",
+  "dataset": "INCLUDE",
+  "original_label": "alright",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\INCLUDE\\extracted\\Greetings\\50. Alright\\MVI_9988.MOV",
+  "original_filename": "MVI_9988.MOV",
+  "signer": "include_MVI_9988",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "1920x1080",
+  "duration": "2.12",
+  "license": "CC-BY-4.0",
+  "paper": "https://doi.org/10.1145/3394171.3413528",
+  "repository": "https://github.com/AI4Bharat/INCLUDE",
+  "download_url": "https://zenodo.org/records/4010759",
+  "sha256": "839ba6336addd137a7820f47ddb4418667b8f9c4334f19914900fa305e8def54",
+  "phash": "7f7f7767e7664080",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "Needs Manual Review"
+}

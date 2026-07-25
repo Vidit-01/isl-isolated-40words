@@ -1,0 +1,22 @@
+{
+  "word": "where",
+  "normalized_word": "where",
+  "dataset": "CISLR",
+  "original_label": "where",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\CISLR\\videos\\8wgrPnyzpMw.mp4",
+  "original_filename": "8wgrPnyzpMw.mp4",
+  "signer": "abstract",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "300x300",
+  "duration": "2.48",
+  "license": "research (see HF card)",
+  "paper": "https://aclanthology.org/2022.emnlp-main.707",
+  "repository": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "download_url": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "sha256": "df47d76b0ad4888b972c5ff1f5f121ccd0da61818d3e6246becb82f10a88dd29",
+  "phash": "ffffffe7c3c38183",
+  "quality_score": "0.85",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

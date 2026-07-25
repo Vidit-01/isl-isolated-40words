@@ -1,0 +1,22 @@
+{
+  "word": "when",
+  "normalized_word": "when",
+  "dataset": "CISLR",
+  "original_label": "when",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\CISLR\\videos\\mPZ37Qlg4B8.mp4",
+  "original_filename": "mPZ37Qlg4B8.mp4",
+  "signer": "abstract",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "300x300",
+  "duration": "2.72",
+  "license": "research (see HF card)",
+  "paper": "https://aclanthology.org/2022.emnlp-main.707",
+  "repository": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "download_url": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "sha256": "c5168480352795c7e8ebcf6c8afcd4b119b55fc5d7759f5ea0b16954b7b5f39c",
+  "phash": "ffe7fff7e3818183",
+  "quality_score": "0.85",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

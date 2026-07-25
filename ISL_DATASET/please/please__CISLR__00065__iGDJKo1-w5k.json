@@ -1,0 +1,22 @@
+{
+  "word": "please",
+  "normalized_word": "please",
+  "dataset": "CISLR",
+  "original_label": "please",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\CISLR\\videos\\iGDJKo1-w5k.mp4",
+  "original_filename": "iGDJKo1-w5k.mp4",
+  "signer": "action",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "300x300",
+  "duration": "3.32",
+  "license": "research (see HF card)",
+  "paper": "https://aclanthology.org/2022.emnlp-main.707",
+  "repository": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "download_url": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "sha256": "110f206cca3db05010c286bf70d6ec02310da944f41a14c0c59d35729970ab2a",
+  "phash": "ffe7dfffc3c1c1c2",
+  "quality_score": "0.85",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

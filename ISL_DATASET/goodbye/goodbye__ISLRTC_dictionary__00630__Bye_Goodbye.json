@@ -1,0 +1,22 @@
+{
+  "word": "goodbye",
+  "normalized_word": "goodbye",
+  "dataset": "ISLRTC_dictionary",
+  "original_label": "Bye_Goodbye",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\ISLRTC_dict\\B\\Bye_Goodbye.mp4",
+  "original_filename": "Bye_Goodbye.mp4",
+  "signer": "islrtc_dict",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "1920x1080",
+  "duration": "4.32",
+  "license": "Government open data / check data.gov.in",
+  "paper": "",
+  "repository": "https://huggingface.co/datasets/Vignesh3816/Indian_Sign_Language_Data.gov_Rencoded",
+  "download_url": "https://www.data.gov.in/resource/indian-sign-language-dictionary-till-january-2024",
+  "sha256": "6d5babf5c04435bc534e06bb59eef2b8a3e0cab9cad91701f6ce238cf25f2833",
+  "phash": "ffefffe7c7c7e7e7",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

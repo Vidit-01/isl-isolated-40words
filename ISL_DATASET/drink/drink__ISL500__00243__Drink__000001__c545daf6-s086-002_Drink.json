@@ -1,0 +1,22 @@
+{
+  "word": "drink",
+  "normalized_word": "drink",
+  "dataset": "ISL500",
+  "original_label": "drink",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\ISL500\\Videos\\User007\\Drink__000001__c545daf6-s086-002_Drink.mp4",
+  "original_filename": "Drink__000001__c545daf6-s086-002_Drink.mp4",
+  "signer": "User007",
+  "split": "",
+  "fps": "29.583333333333332",
+  "resolution": "2560x1440",
+  "duration": "5.307042",
+  "license": "see HF card",
+  "paper": "",
+  "repository": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "download_url": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "sha256": "ec202c3e11ceffec6896d0f950892059dba6525a2bd20c3ca0827ef162b9473b",
+  "phash": "f7f7e7f7c7c34303",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

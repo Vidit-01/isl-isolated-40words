@@ -1,0 +1,22 @@
+{
+  "word": "brother",
+  "normalized_word": "brother",
+  "dataset": "CISLR",
+  "original_label": "brother",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\CISLR\\videos\\yMqhsoFHB_Q_1.mp4",
+  "original_filename": "yMqhsoFHB_Q_1.mp4",
+  "signer": "relation",
+  "split": "",
+  "fps": "30.0",
+  "resolution": "300x300",
+  "duration": "6.0",
+  "license": "research (see HF card)",
+  "paper": "https://aclanthology.org/2022.emnlp-main.707",
+  "repository": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "download_url": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "sha256": "b655901b6302c9dffeff82543d04d35a6c9334e09c0463b9890e04dc7212ea32",
+  "phash": "00e4e0fc7c3c3800",
+  "quality_score": "0.85",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

@@ -1,0 +1,22 @@
+{
+  "word": "help",
+  "normalized_word": "help",
+  "dataset": "CISLR",
+  "original_label": "help",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\CISLR\\videos\\E91cfQBn8_4_1.mp4",
+  "original_filename": "E91cfQBn8_4_1.mp4",
+  "signer": "process",
+  "split": "",
+  "fps": "30.0",
+  "resolution": "300x300",
+  "duration": "3.0",
+  "license": "research (see HF card)",
+  "paper": "https://aclanthology.org/2022.emnlp-main.707",
+  "repository": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "download_url": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "sha256": "e2014d8fb4318ffecb3b9aa50d92f935044faae1660972dd9205b33ddec9718a",
+  "phash": "00e7e6e4fe7e2608",
+  "quality_score": "0.85",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

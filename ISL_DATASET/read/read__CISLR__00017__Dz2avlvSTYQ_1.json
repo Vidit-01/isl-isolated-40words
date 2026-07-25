@@ -1,0 +1,22 @@
+{
+  "word": "read",
+  "normalized_word": "read",
+  "dataset": "CISLR",
+  "original_label": "read",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\CISLR\\videos\\Dz2avlvSTYQ_1.mp4",
+  "original_filename": "Dz2avlvSTYQ_1.mp4",
+  "signer": "action",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "300x300",
+  "duration": "3.0",
+  "license": "research (see HF card)",
+  "paper": "https://aclanthology.org/2022.emnlp-main.707",
+  "repository": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "download_url": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "sha256": "056d0d334e2d9d76c7040ed09f104fdb46dd6de406bd6b0ed92f4d46ceae62b6",
+  "phash": "ffe7ffffc3c18181",
+  "quality_score": "0.85",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

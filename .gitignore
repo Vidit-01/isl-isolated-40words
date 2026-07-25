@@ -1,0 +1,33 @@
+# Large / regenerable data
+raw_datasets/
+hf_isl_upload/
+models/_cache/
+models/_checkpoints/
+**/__pycache__/
+*.pyc
+.Python
+.env
+.venv/
+venv/
+
+# Media & archives (videos live on Hugging Face)
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+*.zip
+*.tar
+*.gz
+*.7z
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Local secrets
+*.token
+credentials.json

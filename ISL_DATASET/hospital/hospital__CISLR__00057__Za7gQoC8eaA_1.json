@@ -1,0 +1,22 @@
+{
+  "word": "hospital",
+  "normalized_word": "hospital",
+  "dataset": "CISLR",
+  "original_label": "hospital",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\CISLR\\videos\\Za7gQoC8eaA_1.mp4",
+  "original_filename": "Za7gQoC8eaA_1.mp4",
+  "signer": "construction",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "300x300",
+  "duration": "2.52",
+  "license": "research (see HF card)",
+  "paper": "https://aclanthology.org/2022.emnlp-main.707",
+  "repository": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "download_url": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "sha256": "3762ff1f3aee55fc8135de444b75d7b995313c5a235562b5dd17f11b95f3da06",
+  "phash": "ffcffff78189c1c3",
+  "quality_score": "0.85",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

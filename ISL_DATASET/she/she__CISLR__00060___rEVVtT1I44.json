@@ -1,0 +1,22 @@
+{
+  "word": "she",
+  "normalized_word": "she",
+  "dataset": "CISLR",
+  "original_label": "she",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\CISLR\\videos\\_rEVVtT1I44.mp4",
+  "original_filename": "_rEVVtT1I44.mp4",
+  "signer": "abstract",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "300x300",
+  "duration": "3.24",
+  "license": "research (see HF card)",
+  "paper": "https://aclanthology.org/2022.emnlp-main.707",
+  "repository": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "download_url": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "sha256": "95d6945d568053c05b3eb8a652b73a9ff35e8dc2f577a0322e9c57b000729595",
+  "phash": "fff7fbffcbc3c1c1",
+  "quality_score": "0.85",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

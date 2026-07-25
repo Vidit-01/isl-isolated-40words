@@ -1,0 +1,22 @@
+{
+  "word": "read",
+  "normalized_word": "read",
+  "dataset": "ISLRTC_dictionary",
+  "original_label": "Read",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\ISLRTC_dict\\R\\Read.mp4",
+  "original_filename": "Read.mp4",
+  "signer": "islrtc_dict",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "1920x1080",
+  "duration": "4.04",
+  "license": "Government open data / check data.gov.in",
+  "paper": "",
+  "repository": "https://huggingface.co/datasets/Vignesh3816/Indian_Sign_Language_Data.gov_Rencoded",
+  "download_url": "https://www.data.gov.in/resource/indian-sign-language-dictionary-till-january-2024",
+  "sha256": "c356e3d98a97c7ac59d5c3ef667d603c6a6c8883dc303e755db615e051dae9d0",
+  "phash": "ffe7efe7e7e7e7e6",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

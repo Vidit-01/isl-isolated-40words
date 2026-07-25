@@ -1,0 +1,22 @@
+{
+  "word": "mother",
+  "normalized_word": "mother",
+  "dataset": "CISLR",
+  "original_label": "mother",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\CISLR\\videos\\Kxj8mG2kNCc.mp4",
+  "original_filename": "Kxj8mG2kNCc.mp4",
+  "signer": "relation",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "300x300",
+  "duration": "2.84",
+  "license": "research (see HF card)",
+  "paper": "https://aclanthology.org/2022.emnlp-main.707",
+  "repository": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "download_url": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "sha256": "1c583f0651fbc34e512c654508c87bf01bc7d39b627e7fbf81311cc42851176b",
+  "phash": "ffe7ffe7c181c1c3",
+  "quality_score": "0.85",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

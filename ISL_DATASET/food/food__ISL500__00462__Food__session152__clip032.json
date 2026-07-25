@@ -1,0 +1,22 @@
+{
+  "word": "food",
+  "normalized_word": "food",
+  "dataset": "ISL500",
+  "original_label": "food",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\ISL500\\Videos\\User015\\Food__session152__clip032.mp4",
+  "original_filename": "Food__session152__clip032.mp4",
+  "signer": "User015",
+  "split": "",
+  "fps": "29.583333333333332",
+  "resolution": "2560x1440",
+  "duration": "5.208",
+  "license": "see HF card",
+  "paper": "",
+  "repository": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "download_url": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "sha256": "6d363fbc31262f424f0a901dddebd05007a5c2270f0ba9af8b9fa0a0b0537eb1",
+  "phash": "e7e7e7e7fcf8f8f0",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

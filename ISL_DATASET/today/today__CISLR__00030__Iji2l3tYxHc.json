@@ -1,0 +1,22 @@
+{
+  "word": "today",
+  "normalized_word": "today",
+  "dataset": "CISLR",
+  "original_label": "today",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\CISLR\\videos\\Iji2l3tYxHc.mp4",
+  "original_filename": "Iji2l3tYxHc.mp4",
+  "signer": "time",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "300x300",
+  "duration": "2.48",
+  "license": "research (see HF card)",
+  "paper": "https://aclanthology.org/2022.emnlp-main.707",
+  "repository": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "download_url": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "sha256": "97883a86959a5b2692db6f63818502fb5eb74c05d72b09a1036dd2d84e43e0ec",
+  "phash": "ffe7efe7c18181c3",
+  "quality_score": "0.85",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

@@ -1,0 +1,73 @@
+2026-07-25 09:52:36,943 | INFO | === ISL Dataset Agent start 2026-07-25T04:22:36Z ===
+2026-07-25 09:52:36,961 | INFO | Wrote inventory (9 datasets) -> C:\Users\Vidit\OneDrive\Desktop\IPD\reports\dataset_inventory.csv
+2026-07-25 09:52:36,963 | WARNING | target_words.json still marked AWAITING_USER_LIST — using listed words as provisional. Replace with your full list for production.
+2026-07-25 09:52:36,963 | INFO | Target words (3): ['hello', 'thank you', 'eat']
+2026-07-25 09:52:37,754 | INFO | INCLUDE categories needed for targets: ['Greetings']
+2026-07-25 09:52:37,756 | INFO | INCLUDE category Greetings: 2 zip parts
+2026-07-25 09:52:37,758 | INFO | Downloading (1/3): https://zenodo.org/api/records/4010759/files/Greetings_1of2.zip/content -> C:\Users\Vidit\OneDrive\Desktop\IPD\raw_datasets\INCLUDE\Greetings_1of2.zip
+2026-07-25 10:10:58,950 | INFO | Wrote inventory (9 datasets) -> C:\Users\Vidit\OneDrive\Desktop\IPD\reports\dataset_inventory.csv
+2026-07-25 10:11:07,783 | INFO | Wrote manual review candidates: C:\Users\Vidit\OneDrive\Desktop\IPD\reports\manual_review_candidates.csv
+2026-07-25 10:11:07,784 | INFO | CISLR exact gloss matches: 98 rows across 39 words
+2026-07-25 10:11:43,815 | INFO | ISL500 file list from cache: 7500
+2026-07-25 10:11:44,041 | INFO | ISL500 candidates for 'hello': 15
+2026-07-25 10:12:28,305 | INFO | ISL500 candidates for 'goodbye': 0
+2026-07-25 10:12:28,549 | INFO | ISL500 candidates for 'thank you': 15
+2026-07-25 10:13:24,186 | INFO | ISL500 candidates for 'sorry': 0
+2026-07-25 10:13:24,224 | INFO | ISL500 candidates for 'please': 15
+2026-07-25 10:17:28,476 | INFO | ISL500 candidates for 'yes': 15
+2026-07-25 10:19:52,234 | INFO | ISL500 candidates for 'no': 15
+2026-07-25 10:21:47,309 | INFO | ISL500 candidates for 'help': 15
+2026-07-25 10:25:40,667 | INFO | ISL500 candidates for 'stop': 0
+2026-07-25 10:25:40,870 | INFO | ISL500 candidates for 'okay': 0
+2026-07-25 10:25:40,997 | INFO | ISL500 candidates for 'me': 0
+2026-07-25 10:25:41,170 | INFO | ISL500 candidates for 'you': 15
+2026-07-25 10:29:52,137 | INFO | ISL500 candidates for 'he': 15
+2026-07-25 10:36:19,770 | INFO | ISL500 candidates for 'she': 15
+2026-07-25 10:40:20,131 | INFO | ISL500 candidates for 'mother': 15
+2026-07-25 10:44:07,866 | INFO | ISL500 candidates for 'father': 15
+2026-07-25 10:47:31,433 | INFO | ISL500 candidates for 'brother': 0
+2026-07-25 10:47:31,610 | INFO | ISL500 candidates for 'sister': 15
+2026-07-25 10:50:28,453 | INFO | ISL500 candidates for 'friend': 15
+2026-07-25 10:53:24,164 | INFO | Wrote inventory (9 datasets) -> C:\Users\Vidit\OneDrive\Desktop\IPD\reports\dataset_inventory.csv
+2026-07-25 10:53:24,166 | INFO | Local finalize targets=40
+2026-07-25 10:53:39,445 | INFO | CISLR local scan: 98 videos
+2026-07-25 10:57:09,643 | INFO | ISL500 local scan: 221 videos
+2026-07-25 10:57:09,643 | INFO | INCLUDE local scan: 0 videos
+2026-07-25 10:57:09,654 | INFO | After dedup: 302 kept, 17 dups
+2026-07-25 11:05:20,741 | INFO | Reports written under C:\Users\Vidit\OneDrive\Desktop\IPD\reports
+2026-07-25 11:17:21,783 | INFO | Wrote inventory (9 datasets) -> C:\Users\Vidit\OneDrive\Desktop\IPD\reports\dataset_inventory.csv
+2026-07-25 11:17:21,784 | INFO | Local finalize targets=40
+2026-07-25 11:17:36,866 | INFO | CISLR local scan: 98 videos
+2026-07-25 11:26:57,245 | INFO | ISL500 local scan: 405 videos
+2026-07-25 11:26:57,246 | INFO | INCLUDE local scan: 0 videos
+2026-07-25 11:26:57,268 | INFO | After dedup: 486 kept, 17 dups
+2026-07-25 11:44:11,330 | INFO | Reports written under C:\Users\Vidit\OneDrive\Desktop\IPD\reports
+2026-07-25 11:45:25,999 | INFO | Wrote inventory (9 datasets) -> C:\Users\Vidit\OneDrive\Desktop\IPD\reports\dataset_inventory.csv
+2026-07-25 11:45:26,016 | INFO | Local finalize targets=40
+2026-07-25 11:45:42,352 | INFO | CISLR local scan: 98 videos
+2026-07-25 11:55:14,821 | INFO | ISL500 local scan: 405 videos
+2026-07-25 11:55:25,071 | INFO | INCLUDE local scan: 21 videos
+2026-07-25 11:55:25,115 | INFO | After dedup: 492 kept, 32 dups
+2026-07-25 12:09:39,376 | INFO | Reports written under C:\Users\Vidit\OneDrive\Desktop\IPD\reports
+2026-07-25 12:22:50,893 | INFO | Wrote inventory (9 datasets) -> C:\Users\Vidit\OneDrive\Desktop\IPD\reports\dataset_inventory.csv
+2026-07-25 12:22:50,895 | INFO | Local finalize targets=40
+2026-07-25 12:23:13,655 | INFO | CISLR local scan: 98 videos
+2026-07-25 12:35:40,666 | INFO | ISL500 local scan: 405 videos
+2026-07-25 12:36:34,797 | INFO | INCLUDE local scan: 42 videos
+2026-07-25 12:36:34,858 | INFO | After dedup: 528 kept, 17 dups
+2026-07-25 12:53:18,684 | INFO | Reports written under C:\Users\Vidit\OneDrive\Desktop\IPD\reports
+2026-07-25 12:55:09,215 | INFO | Wrote inventory (9 datasets) -> C:\Users\Vidit\OneDrive\Desktop\IPD\reports\dataset_inventory.csv
+2026-07-25 12:55:09,217 | INFO | Local finalize targets=40
+2026-07-25 12:55:28,111 | INFO | CISLR local scan: 98 videos
+2026-07-25 13:07:10,267 | INFO | ISL500 local scan: 405 videos
+2026-07-25 13:08:26,312 | INFO | INCLUDE local scan: 102 videos
+2026-07-25 13:08:26,400 | INFO | After dedup: 588 kept, 17 dups
+2026-07-25 13:26:43,134 | INFO | Reports written under C:\Users\Vidit\OneDrive\Desktop\IPD\reports
+2026-07-25 15:03:44,525 | INFO | Wrote inventory (9 datasets) -> C:\Users\Vidit\OneDrive\Desktop\IPD\reports\dataset_inventory.csv
+2026-07-25 15:03:44,528 | INFO | Local finalize targets=40
+2026-07-25 15:04:02,423 | INFO | CISLR local scan: 98 videos
+2026-07-25 15:17:42,610 | INFO | ISL500 local scan: 405 videos
+2026-07-25 15:20:13,352 | INFO | INCLUDE local scan: 143 videos
+2026-07-25 15:20:23,888 | INFO | ISLRTC_dictionary local scan: 16 videos
+2026-07-25 15:20:23,973 | INFO | After dedup: 642 kept, 20 dups
+2026-07-25 15:41:09,680 | INFO | Reports written under C:\Users\Vidit\OneDrive\Desktop\IPD\reports

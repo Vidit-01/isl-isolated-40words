@@ -1,0 +1,22 @@
+{
+  "word": "sorry",
+  "normalized_word": "sorry",
+  "dataset": "CISLR",
+  "original_label": "sorry",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\CISLR\\videos\\0sE5EMDNsDo.mp4",
+  "original_filename": "0sE5EMDNsDo.mp4",
+  "signer": "greeting",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "300x300",
+  "duration": "2.96",
+  "license": "research (see HF card)",
+  "paper": "https://aclanthology.org/2022.emnlp-main.707",
+  "repository": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "download_url": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "sha256": "afccb900d1fad3dabec5667b6b5a0851ce935b1c2f2e1be6ee19b2c881859dc3",
+  "phash": "ffefdfffc387c7c3",
+  "quality_score": "0.85",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

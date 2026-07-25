@@ -1,0 +1,22 @@
+{
+  "word": "she",
+  "normalized_word": "she",
+  "dataset": "ISL500",
+  "original_label": "she",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\ISL500\\Videos\\User010\\She__000001.mp4",
+  "original_filename": "She__000001.mp4",
+  "signer": "User010",
+  "split": "",
+  "fps": "29.583333333333332",
+  "resolution": "2560x1440",
+  "duration": "5.273239",
+  "license": "see HF card",
+  "paper": "",
+  "repository": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "download_url": "https://huggingface.co/datasets/ISL500/ISL-DATA",
+  "sha256": "2f16c54420df6ff56d63ec18989dd781e37b2577ad9c04230150391d1999fdec",
+  "phash": "f7f7f7e7e3c3c1c0",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

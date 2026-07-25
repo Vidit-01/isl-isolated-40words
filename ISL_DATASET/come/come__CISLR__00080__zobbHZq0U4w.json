@@ -1,0 +1,22 @@
+{
+  "word": "come",
+  "normalized_word": "come",
+  "dataset": "CISLR",
+  "original_label": "come",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\CISLR\\videos\\zobbHZq0U4w.mp4",
+  "original_filename": "zobbHZq0U4w.mp4",
+  "signer": "process",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "300x300",
+  "duration": "4.44",
+  "license": "research (see HF card)",
+  "paper": "https://aclanthology.org/2022.emnlp-main.707",
+  "repository": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "download_url": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "sha256": "a62d8cbb10cc8d32ee319733f5a38f89a48be1af921cdfbb107636fdb9922bd7",
+  "phash": "ffe7ffe7d3c3c3c3",
+  "quality_score": "0.85",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

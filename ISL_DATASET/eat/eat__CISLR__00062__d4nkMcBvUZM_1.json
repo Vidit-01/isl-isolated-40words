@@ -1,0 +1,22 @@
+{
+  "word": "eat",
+  "normalized_word": "eat",
+  "dataset": "CISLR",
+  "original_label": "eat",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\CISLR\\videos\\d4nkMcBvUZM_1.mp4",
+  "original_filename": "d4nkMcBvUZM_1.mp4",
+  "signer": "action",
+  "split": "",
+  "fps": "30.0",
+  "resolution": "300x300",
+  "duration": "3.0",
+  "license": "research (see HF card)",
+  "paper": "https://aclanthology.org/2022.emnlp-main.707",
+  "repository": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "download_url": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "sha256": "a1eb2ae3f6fe158fe95094247a11a6a61a5b8525935bd5455f8e91bde1679ada",
+  "phash": "00e000003e2e2e1c",
+  "quality_score": "0.85",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

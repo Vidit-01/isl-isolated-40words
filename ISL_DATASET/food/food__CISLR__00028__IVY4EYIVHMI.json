@@ -1,0 +1,22 @@
+{
+  "word": "food",
+  "normalized_word": "food",
+  "dataset": "CISLR",
+  "original_label": "food",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\CISLR\\videos\\IVY4EYIVHMI.mp4",
+  "original_filename": "IVY4EYIVHMI.mp4",
+  "signer": "foods and drinks",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "300x300",
+  "duration": "3.28",
+  "license": "research (see HF card)",
+  "paper": "https://aclanthology.org/2022.emnlp-main.707",
+  "repository": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "download_url": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "sha256": "2f47b346b250e3bced2e0d8b4a6e21dd122203a790ba2c44ad50ccf5a64ce63a",
+  "phash": "ffe7fff7c181c0c1",
+  "quality_score": "0.85",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

@@ -1,0 +1,22 @@
+{
+  "word": "yes",
+  "normalized_word": "yes",
+  "dataset": "CISLR",
+  "original_label": "yes",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\CISLR\\videos\\MXmTYGHWvvE.mp4",
+  "original_filename": "MXmTYGHWvvE.mp4",
+  "signer": "comparator",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "300x300",
+  "duration": "2.92",
+  "license": "research (see HF card)",
+  "paper": "https://aclanthology.org/2022.emnlp-main.707",
+  "repository": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "download_url": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "sha256": "05e6bad04e29116d0f1200d4d1c5061b340a5cf11fc8e59e9b749af937b30e33",
+  "phash": "ffe7fff7c3818181",
+  "quality_score": "0.85",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

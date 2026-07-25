@@ -1,0 +1,22 @@
+{
+  "word": "stand",
+  "normalized_word": "stand",
+  "dataset": "CISLR",
+  "original_label": "stand",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\CISLR\\videos\\1GJkBoBf-S0_1.mp4",
+  "original_filename": "1GJkBoBf-S0_1.mp4",
+  "signer": "action",
+  "split": "",
+  "fps": "30.0",
+  "resolution": "300x300",
+  "duration": "3.0",
+  "license": "research (see HF card)",
+  "paper": "https://aclanthology.org/2022.emnlp-main.707",
+  "repository": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "download_url": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "sha256": "1dccfcf3fd22bb68e15a8040420ca7e55de841c2e67ab65f5cb7b168c62e495f",
+  "phash": "00e2e0f42e3e3638",
+  "quality_score": "0.85",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

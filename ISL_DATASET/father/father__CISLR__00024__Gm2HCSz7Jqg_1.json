@@ -1,0 +1,22 @@
+{
+  "word": "father",
+  "normalized_word": "father",
+  "dataset": "CISLR",
+  "original_label": "father",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\CISLR\\videos\\Gm2HCSz7Jqg_1.mp4",
+  "original_filename": "Gm2HCSz7Jqg_1.mp4",
+  "signer": "relation",
+  "split": "",
+  "fps": "30.0",
+  "resolution": "300x300",
+  "duration": "4.5",
+  "license": "research (see HF card)",
+  "paper": "https://aclanthology.org/2022.emnlp-main.707",
+  "repository": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "download_url": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "sha256": "9a4bcd474b63a4639e2f106446d12acb58e2a2d2d8735f89e5125d177ca391a1",
+  "phash": "ffffffffc381c1c1",
+  "quality_score": "0.85",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

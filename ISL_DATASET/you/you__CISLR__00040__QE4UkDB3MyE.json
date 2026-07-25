@@ -1,0 +1,22 @@
+{
+  "word": "you",
+  "normalized_word": "you",
+  "dataset": "CISLR",
+  "original_label": "you",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\CISLR\\videos\\QE4UkDB3MyE.mp4",
+  "original_filename": "QE4UkDB3MyE.mp4",
+  "signer": "relation",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "300x300",
+  "duration": "2.72",
+  "license": "research (see HF card)",
+  "paper": "https://aclanthology.org/2022.emnlp-main.707",
+  "repository": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "download_url": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "sha256": "73ae9c2114a1a4b2e8b862e44306d0e4e2d9852336905d227594666e1ed85dfb",
+  "phash": "fffff7ffc7c3c3c3",
+  "quality_score": "0.85",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

@@ -1,0 +1,22 @@
+{
+  "word": "sorry",
+  "normalized_word": "sorry",
+  "dataset": "ISLRTC_dictionary",
+  "original_label": "Sorry_(Sign_2)",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\ISLRTC_dict\\S\\Sorry_(Sign_2).mp4",
+  "original_filename": "Sorry_(Sign_2).mp4",
+  "signer": "islrtc_dict",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "1920x1080",
+  "duration": "2.92",
+  "license": "Government open data / check data.gov.in",
+  "paper": "",
+  "repository": "https://huggingface.co/datasets/Vignesh3816/Indian_Sign_Language_Data.gov_Rencoded",
+  "download_url": "https://www.data.gov.in/resource/indian-sign-language-dictionary-till-january-2024",
+  "sha256": "03713967104ea7992db8123db9dc7f0d86b9a2f5ffaf34f00882ad610b2ff18a",
+  "phash": "ffefffe7c7e7e7e6",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

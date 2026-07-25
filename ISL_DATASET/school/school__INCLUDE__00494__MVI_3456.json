@@ -1,0 +1,22 @@
+{
+  "word": "school",
+  "normalized_word": "school",
+  "dataset": "INCLUDE",
+  "original_label": "school",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\INCLUDE\\extracted\\Places\\24. School\\MVI_3456.MOV",
+  "original_filename": "MVI_3456.MOV",
+  "signer": "include_MVI_3456",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "1920x1080",
+  "duration": "1.88",
+  "license": "CC-BY-4.0",
+  "paper": "https://doi.org/10.1145/3394171.3413528",
+  "repository": "https://github.com/AI4Bharat/INCLUDE",
+  "download_url": "https://zenodo.org/records/4010759",
+  "sha256": "62c84aa73f66483b307b4419e2d19c469ae92bcda04db1d4741a15844e5fc6d9",
+  "phash": "7f77676767670000",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

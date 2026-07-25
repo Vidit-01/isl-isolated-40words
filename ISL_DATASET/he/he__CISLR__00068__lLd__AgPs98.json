@@ -1,0 +1,22 @@
+{
+  "word": "he",
+  "normalized_word": "he",
+  "dataset": "CISLR",
+  "original_label": "he",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\CISLR\\videos\\lLd__AgPs98.mp4",
+  "original_filename": "lLd__AgPs98.mp4",
+  "signer": "language",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "300x300",
+  "duration": "2.96",
+  "license": "research (see HF card)",
+  "paper": "https://aclanthology.org/2022.emnlp-main.707",
+  "repository": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "download_url": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "sha256": "8f389257271d2ae31b8544d97d5fea47731efb306e1bf8e51ab3cf7d9efe3aa9",
+  "phash": "ffcfffff93a3e3c2",
+  "quality_score": "0.85",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

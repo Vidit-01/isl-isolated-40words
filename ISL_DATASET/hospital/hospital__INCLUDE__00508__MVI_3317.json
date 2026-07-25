@@ -1,0 +1,22 @@
+{
+  "word": "hospital",
+  "normalized_word": "hospital",
+  "dataset": "INCLUDE",
+  "original_label": "hospital",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\INCLUDE\\extracted\\Places\\30. Hospital\\MVI_3317.MOV",
+  "original_filename": "MVI_3317.MOV",
+  "signer": "include_MVI_3317",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "1920x1080",
+  "duration": "2.84",
+  "license": "CC-BY-4.0",
+  "paper": "https://doi.org/10.1145/3394171.3413528",
+  "repository": "https://github.com/AI4Bharat/INCLUDE",
+  "download_url": "https://zenodo.org/records/4010759",
+  "sha256": "12ad9445600d8dc98d52f67e7880c92007d748ef4ece208b5ed34d3b86ecc270",
+  "phash": "7f77676767670000",
+  "quality_score": "1.0",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}

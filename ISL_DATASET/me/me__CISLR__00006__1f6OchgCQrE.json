@@ -1,0 +1,22 @@
+{
+  "word": "me",
+  "normalized_word": "me",
+  "dataset": "CISLR",
+  "original_label": "me",
+  "video_path": "C:\\Users\\Vidit\\OneDrive\\Desktop\\IPD\\raw_datasets\\CISLR\\videos\\1f6OchgCQrE.mp4",
+  "original_filename": "1f6OchgCQrE.mp4",
+  "signer": "human",
+  "split": "",
+  "fps": "25.0",
+  "resolution": "300x300",
+  "duration": "4.8",
+  "license": "research (see HF card)",
+  "paper": "https://aclanthology.org/2022.emnlp-main.707",
+  "repository": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "download_url": "https://huggingface.co/datasets/Exploration-Lab/CISLR",
+  "sha256": "68dff96af4f22c2fa0b36b33f584c1e301beb2243f35c8d8efe17015a48aaa8a",
+  "phash": "ffffffe7c38383c3",
+  "quality_score": "0.85",
+  "duplicate_status": "unique",
+  "review_status": "accepted"
+}
