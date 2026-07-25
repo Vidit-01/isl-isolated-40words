@@ -7,6 +7,13 @@ test metrics under models/_weights/<model_name>/.
 """
 from __future__ import annotations
 
+import os
+
+# Quiet MediaPipe / absl / TensorFlow C++ spam before those libs load
+os.environ.setdefault("GLOG_minloglevel", "3")
+os.environ.setdefault("TF_CPP_MIN_LOG_LEVEL", "3")
+os.environ.setdefault("ABSL_MIN_LOG_LEVEL", "3")
+
 import argparse
 import sys
 from pathlib import Path
@@ -30,7 +37,7 @@ from common import (  # noqa: E402
     set_seed,
     stratified_split,
 )
-from common.engine import evaluate, save_weights, train_one_epoch  # noqa: E402
+from common.engine import append_train_log, evaluate, save_weights, train_one_epoch  # noqa: E402
 from common.landmarks import FEAT_DIM  # noqa: E402
 from landmark_tcn.model import LandmarkTCN  # noqa: E402
 from mediapipe_transformer.dataset import LandmarkDataset, collate  # noqa: E402
@@ -79,6 +86,15 @@ def class_weights(train_y, num_classes: int, device) -> torch.Tensor:
 
 def make_landmark_loaders(train_df, val_df, test_df, num_frames, batch_size, num_workers):
     cache = CACHE_DIR / f"landmarks_T{num_frames}"
+    n_cached = len(list(cache.glob("*.npy"))) if cache.exists() else 0
+    if n_cached < 10:
+        raise SystemExit(
+            f"Landmark cache almost empty ({n_cached} files in {cache}).\n"
+            f"Those MediaPipe GL messages are NOT training — extract landmarks first:\n"
+            f"  python models/mediapipe_transformer/extract_landmarks.py --num-frames {num_frames}\n"
+            f"Then re-run train_t4.py. You should see a tqdm bar with loss/acc."
+        )
+    print(f"Using landmark cache: {cache} ({n_cached} .npy files)")
     train_ds = LandmarkDataset(
         train_df["abs_path"].tolist(), train_df["y"].tolist(), cache, num_frames, True
     )
@@ -109,12 +125,19 @@ def train_landmark_model(name: str, model: nn.Module, loaders, args, labels, dev
     sched = torch.optim.lr_scheduler.CosineAnnealingLR(opt, T_max=args.epochs)
     scaler = GradScaler(enabled=device.type == "cuda")
 
+    weights_dir = WEIGHTS_DIR / name
+    weights_dir.mkdir(parents=True, exist_ok=True)
+    log_path = weights_dir / "train.log"
+    append_train_log(log_path, f"# {name} training start  epochs={args.epochs} batch={args.batch_size}")
+
     history = []
     best_acc = -1.0
     best_state = None
     for epoch in range(1, args.epochs + 1):
-        tr = train_one_epoch(model, train_loader, opt, criterion, device, scaler)
-        va = evaluate(model, val_loader, criterion, device)
+        tr = train_one_epoch(
+            model, train_loader, opt, criterion, device, scaler, desc=f"{name} ep{epoch}/{args.epochs}"
+        )
+        va = evaluate(model, val_loader, criterion, device, desc=f"{name} val")
         sched.step()
         row = {
             "epoch": epoch,
@@ -124,10 +147,12 @@ def train_landmark_model(name: str, model: nn.Module, loaders, args, labels, dev
             "val_acc": va["acc"],
         }
         history.append(row)
-        print(
-            f"[{name}] epoch {epoch:03d}  "
-            f"train {tr['loss']:.4f}/{tr['acc']:.3f}  val {va['loss']:.4f}/{va['acc']:.3f}"
+        line = (
+            f"[{name}] epoch {epoch:03d}/{args.epochs}  "
+            f"train_loss={tr['loss']:.4f} train_acc={tr['acc']:.3f}  "
+            f"val_loss={va['loss']:.4f} val_acc={va['acc']:.3f}"
         )
+        append_train_log(log_path, line)
         if va["acc"] >= best_acc:
             best_acc = va["acc"]
             best_state = {k: v.detach().cpu().clone() for k, v in model.state_dict().items()}
@@ -135,8 +160,11 @@ def train_landmark_model(name: str, model: nn.Module, loaders, args, labels, dev
     if best_state is not None:
         model.load_state_dict(best_state)
 
-    test = evaluate(model, test_loader, criterion, device)
-    print(f"[{name}] TEST acc={test['acc']:.3f} loss={test['loss']:.4f} n={test['n']}")
+    test = evaluate(model, test_loader, criterion, device, desc=f"{name} test")
+    append_train_log(
+        log_path,
+        f"[{name}] TEST acc={test['acc']:.3f} loss={test['loss']:.4f} n={test['n']} best_val={best_acc:.3f}",
+    )
 
     ckpt_dir = CHECKPOINT_DIR / name
     ckpt_dir.mkdir(parents=True, exist_ok=True)
@@ -152,7 +180,6 @@ def train_landmark_model(name: str, model: nn.Module, loaders, args, labels, dev
     }
     if extra_meta:
         meta.update(extra_meta)
-    weights_dir = WEIGHTS_DIR / name
     save_weights(
         model,
         weights_dir,
@@ -222,12 +249,26 @@ def train_videomae(train_df, val_df, test_df, labels, args, device):
     sched = torch.optim.lr_scheduler.CosineAnnealingLR(opt, T_max=args.epochs)
     scaler = GradScaler(enabled=device.type == "cuda")
 
+    weights_dir = WEIGHTS_DIR / "videomae_finetune"
+    weights_dir.mkdir(parents=True, exist_ok=True)
+    log_path = weights_dir / "train.log"
+    append_train_log(log_path, f"# videomae training start  epochs={args.epochs} batch={args.batch_size}")
+
     history = []
     best_acc = -1.0
     best_state = None
     for epoch in range(1, args.epochs + 1):
-        tr = train_one_epoch(model, train_loader, opt, criterion, device, scaler, forward_fn)
-        va = evaluate(model, val_loader, criterion, device, forward_fn)
+        tr = train_one_epoch(
+            model,
+            train_loader,
+            opt,
+            criterion,
+            device,
+            scaler,
+            forward_fn,
+            desc=f"videomae ep{epoch}/{args.epochs}",
+        )
+        va = evaluate(model, val_loader, criterion, device, forward_fn, desc="videomae val")
         sched.step()
         history.append(
             {
@@ -238,9 +279,11 @@ def train_videomae(train_df, val_df, test_df, labels, args, device):
                 "val_acc": va["acc"],
             }
         )
-        print(
-            f"[videomae] epoch {epoch:03d}  "
-            f"train {tr['loss']:.4f}/{tr['acc']:.3f}  val {va['loss']:.4f}/{va['acc']:.3f}"
+        append_train_log(
+            log_path,
+            f"[videomae] epoch {epoch:03d}/{args.epochs}  "
+            f"train_loss={tr['loss']:.4f} train_acc={tr['acc']:.3f}  "
+            f"val_loss={va['loss']:.4f} val_acc={va['acc']:.3f}",
         )
         if va["acc"] >= best_acc:
             best_acc = va["acc"]
@@ -249,16 +292,19 @@ def train_videomae(train_df, val_df, test_df, labels, args, device):
     if best_state is not None:
         model.load_state_dict(best_state)
 
-    test = evaluate(model, test_loader, criterion, device, forward_fn)
-    print(f"[videomae] TEST acc={test['acc']:.3f} loss={test['loss']:.4f} n={test['n']}")
+    test = evaluate(model, test_loader, criterion, device, forward_fn, desc="videomae test")
+    append_train_log(
+        log_path,
+        f"[videomae] TEST acc={test['acc']:.3f} loss={test['loss']:.4f} n={test['n']} best_val={best_acc:.3f}",
+    )
 
-    out_hf = WEIGHTS_DIR / "videomae_finetune" / "hf"
+    out_hf = weights_dir / "hf"
     out_hf.mkdir(parents=True, exist_ok=True)
     model.save_pretrained(out_hf)
     processor.save_pretrained(out_hf)
     save_weights(
         model,
-        WEIGHTS_DIR / "videomae_finetune",
+        weights_dir,
         meta={
             "model": "videomae_finetune",
             "hf_name": args.model_name,

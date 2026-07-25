@@ -57,7 +57,8 @@ def stratified_split(
     rng = np.random.default_rng(seed)
     train_idx, val_idx, test_idx = [], [], []
     for _, g in df.groupby("word"):
-        idx = g.index.to_numpy()
+        # copy: pandas Index views can be read-only (numpy shuffle fails otherwise)
+        idx = np.array(g.index, dtype=np.int64, copy=True)
         rng.shuffle(idx)
         n = len(idx)
         if n == 1:

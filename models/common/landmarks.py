@@ -70,12 +70,23 @@ def normalize_landmarks(frame_xyz: np.ndarray) -> np.ndarray:
     ).astype(np.float32)
 
 
+def _silence_mediapipe_logs() -> None:
+    import os
+    import warnings
+
+    os.environ.setdefault("GLOG_minloglevel", "3")
+    os.environ.setdefault("TF_CPP_MIN_LOG_LEVEL", "3")
+    os.environ.setdefault("ABSL_MIN_LOG_LEVEL", "3")
+    warnings.filterwarnings("ignore", message=".*Feedback manager.*")
+
+
 def extract_video_landmarks(
     video_path: str | Path,
     num_frames: int = 30,
     max_side: int = 480,
 ) -> np.ndarray:
     """Return (T, FEAT_DIM) normalized landmark sequence."""
+    _silence_mediapipe_logs()
     import mediapipe as mp
 
     path = Path(video_path)
@@ -137,11 +148,18 @@ def load_or_extract(
     video_path: str | Path,
     cache_dir: Path,
     num_frames: int = 30,
+    require_cache: bool = False,
 ) -> np.ndarray:
     cache_dir.mkdir(parents=True, exist_ok=True)
     out = cache_dir / cache_key(video_path, num_frames)
     if out.exists():
         return np.load(out)
+    if require_cache:
+        raise FileNotFoundError(
+            f"Landmark cache missing for {video_path}. "
+            f"Run first:\n"
+            f"  python models/mediapipe_transformer/extract_landmarks.py --num-frames {num_frames}"
+        )
     arr = extract_video_landmarks(video_path, num_frames=num_frames)
     np.save(out, arr)
     return arr

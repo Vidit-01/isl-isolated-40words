@@ -21,18 +21,25 @@ class LandmarkDataset(Dataset):
         cache_dir: Path,
         num_frames: int = 30,
         augment: bool = False,
+        require_cache: bool = True,
     ):
         self.paths = paths
         self.labels = labels
         self.cache_dir = Path(cache_dir)
         self.num_frames = num_frames
         self.augment = augment
+        self.require_cache = require_cache
 
     def __len__(self) -> int:
         return len(self.paths)
 
     def __getitem__(self, idx: int):
-        arr = load_or_extract(self.paths[idx], self.cache_dir, self.num_frames)
+        arr = load_or_extract(
+            self.paths[idx],
+            self.cache_dir,
+            self.num_frames,
+            require_cache=self.require_cache,
+        )
         x = arr.astype(np.float32)
         if self.augment:
             # light noise + random temporal shift (circular)

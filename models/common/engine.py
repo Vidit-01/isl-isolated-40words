@@ -9,6 +9,7 @@ import torch
 import torch.nn as nn
 from torch.cuda.amp import GradScaler, autocast
 from torch.utils.data import DataLoader
+from tqdm import tqdm
 
 from . import accuracy, save_json
 
@@ -21,11 +22,13 @@ def evaluate(
     device: torch.device,
     forward_fn: Optional[Callable] = None,
     use_amp: bool = True,
+    desc: str = "val",
 ) -> dict[str, Any]:
     model.eval()
     total_loss, total_acc, n = 0.0, 0.0, 0
     all_pred, all_y = [], []
-    for batch in loader:
+    pbar = tqdm(loader, desc=desc, leave=False, dynamic_ncols=True)
+    for batch in pbar:
         if forward_fn is not None:
             logits, y, loss = forward_fn(model, batch, criterion, device, train=False)
         else:
@@ -40,6 +43,7 @@ def evaluate(
         n += bs
         all_pred.append(logits.argmax(-1).detach().cpu().numpy())
         all_y.append(y.detach().cpu().numpy())
+        pbar.set_postfix(loss=f"{total_loss / max(n, 1):.4f}", acc=f"{total_acc / max(n, 1):.3f}")
     preds = np.concatenate(all_pred) if all_pred else np.array([])
     ys = np.concatenate(all_y) if all_y else np.array([])
     return {
@@ -61,11 +65,13 @@ def train_one_epoch(
     forward_fn: Optional[Callable] = None,
     max_grad_norm: float = 1.0,
     use_amp: bool = True,
+    desc: str = "train",
 ) -> dict[str, float]:
     model.train()
     total_loss, total_acc, n = 0.0, 0.0, 0
     amp = use_amp and device.type == "cuda"
-    for batch in loader:
+    pbar = tqdm(loader, desc=desc, leave=False, dynamic_ncols=True)
+    for batch in pbar:
         opt.zero_grad(set_to_none=True)
         if forward_fn is not None:
             with autocast(enabled=amp):
@@ -90,7 +96,16 @@ def train_one_epoch(
         total_loss += float(loss.item()) * bs
         total_acc += accuracy(logits.detach(), y) * bs
         n += bs
+        pbar.set_postfix(loss=f"{total_loss / max(n, 1):.4f}", acc=f"{total_acc / max(n, 1):.3f}")
     return {"loss": total_loss / max(n, 1), "acc": total_acc / max(n, 1)}
+
+
+def append_train_log(log_path: Path, line: str, also_print: bool = True) -> None:
+    log_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(log_path, "a", encoding="utf-8") as f:
+        f.write(line.rstrip() + "\n")
+    if also_print:
+        print(line)
 
 
 def save_weights(
