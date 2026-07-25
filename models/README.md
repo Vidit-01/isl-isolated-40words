@@ -1,75 +1,78 @@
 # ISL recognition models
 
-Three training pipelines for the local `ISL_DATASET/` (~640 clips, 40 words).  
-Designed for **small data + low compute**.
+Three training pipelines for `ISL_DATASET/` (~640 clips, 40 words), plus an **NVIDIA L40S** full pipeline.
 
-| Model | Folder | Idea | Compute |
-|-------|--------|------|---------|
-| **1. MediaPipe → Transformer** | `mediapipe_transformer/` | Sample 30/60 frames → Holistic pose+hands+face landmarks → normalize → Transformer | Low–medium (CPU OK after extract) |
-| **2. VideoMAE fine-tune** | `videomae_finetune/` | Pretrained video foundation model, freeze backbone, train head | Medium (GPU preferred; batch 2) |
-| **3. Landmark TCN (recommended first)** | `landmark_tcn/` | Same landmarks as (1), Temporal CNN instead of Transformer | **Lowest** after extract |
+| Model | Folder | Idea |
+|-------|--------|------|
+| **1. MediaPipe → Transformer** | `mediapipe_transformer/` | 30/60 frames → Holistic landmarks → normalize → Transformer |
+| **2. VideoMAE fine-tune** | `videomae_finetune/` | Pretrained video foundation model fine-tuned on ISL |
+| **3. Landmark TCN** | `landmark_tcn/` | Same landmarks, Temporal CNN (strong on small data) |
 
-## Why model 3 is TCN
+## L40S full pipeline (Linux)
 
-With only hundreds of clips and heavy class imbalance, a full video backbone or a deep Transformer overfits easily. A **Temporal Convolutional Network on MediaPipe landmarks**:
+One script: clone GitHub → download HF videos → landmarks → train → test → save weights.
 
-- Reuses the same cheap landmark cache as model 1  
-- Far fewer parameters than VideoMAE / Transformer  
-- Often stronger than Transformers on short sequential datasets  
-- Trains on CPU in minutes once landmarks are cached  
+```bash
+chmod +x scripts/run_pipeline_l40s.sh
+./scripts/run_pipeline_l40s.sh
+```
 
-## Setup
+Optional:
+
+```bash
+export WORKDIR=$HOME/isl-run
+export HF_TOKEN=hf_xxx          # if needed
+export MODELS="landmark_tcn mediapipe_transformer videomae_finetune"
+./scripts/run_pipeline_l40s.sh
+```
+
+Weights land in `models/_weights/<model>/`:
+
+- `model.pt` — PyTorch state dict + meta  
+- `labels.json` — word ↔ id  
+- `history.json` — train/val curves  
+- `test_metrics.json` — held-out test accuracy  
+- `videomae_finetune/hf/` — HF `save_pretrained` tree  
+
+L40S presets (in `models/train_l40s.py`): TF32, AMP, large batches (TCN 256 / Transformer 128 / VideoMAE 16), `num_workers=8`, full VideoMAE fine-tune.
+
+Manual L40S commands:
+
+```bash
+python scripts/download_hf_dataset.py
+python models/mediapipe_transformer/extract_landmarks.py --num-frames 60
+python models/train_l40s.py --models landmark_tcn mediapipe_transformer videomae_finetune
+python models/eval_l40s.py
+```
+
+## Local / low-compute (Windows or laptop)
 
 ```powershell
-cd C:\Users\Vidit\OneDrive\Desktop\IPD
 python -m pip install -r models/requirements.txt
-```
-
-## Shared landmark cache (models 1 & 3)
-
-```powershell
-# 30 frames (faster) or 60
 python models/mediapipe_transformer/extract_landmarks.py --num-frames 30
+python models/landmark_tcn/train.py --num-frames 30
+python models/mediapipe_transformer/train.py --num-frames 30
+python models/videomae_finetune/train.py --epochs 15 --batch-size 2
 ```
 
-Caches to `models/_cache/landmarks_T30/`.
+## Data split
 
-Normalization: mid-hip origin, scale by shoulder width (position/scale independence).
-
-## Train
-
-```powershell
-# 3) start here (fastest)
-python models/landmark_tcn/train.py --num-frames 30 --epochs 50
-
-# 1) landmark Transformer
-python models/mediapipe_transformer/train.py --num-frames 30 --epochs 40
-
-# 2) VideoMAE head-only fine-tune (downloads weights once)
-python models/videomae_finetune/train.py --epochs 15 --batch-size 2 --freeze-backbone
-# full fine-tune (more VRAM/time):
-python models/videomae_finetune/train.py --unfreeze --batch-size 1 --epochs 10
-```
-
-Checkpoints → `models/_checkpoints/<model_name>/`.
-
-Classes with fewer than `--min-clips` (default 2) are skipped so train/val split is stable. Raise coverage in `ISL_DATASET` for rare words before expecting high accuracy.
-
-## Data notes
-
-- Labels from `ISL_DATASET/metadata.csv`  
-- Stratified ~80/20 split per word  
-- Class-weighted cross-entropy for imbalance  
-- Rare words (1 clip) stay train-only  
+Stratified **train / val / test** (~70/15/15 per class). Best **val** checkpoint is kept; **test** is reported once and stored with weights.
 
 ## Layout
 
 ```
 models/
-  common/                 # metadata, splits, MediaPipe landmarks
-  mediapipe_transformer/  # model 1
-  videomae_finetune/      # model 2
-  landmark_tcn/           # model 3
-  _cache/                 # landmark .npy
-  _checkpoints/           # weights + history.json
+  common/                  # metadata, splits, landmarks, AMP engine
+  train_l40s.py            # L40S multi-model trainer
+  eval_l40s.py             # test-set evaluation
+  mediapipe_transformer/
+  videomae_finetune/
+  landmark_tcn/
+  _cache/                  # landmark .npy
+  _checkpoints/            # intermediate best.pt
+  _weights/                # deployable weights + test metrics
+scripts/
+  run_pipeline_l40s.sh     # end-to-end Linux pipeline
+  download_hf_dataset.py
 ```

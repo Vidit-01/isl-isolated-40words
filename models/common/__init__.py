@@ -14,6 +14,7 @@ DATASET_DIR = ROOT / "ISL_DATASET"
 METADATA = DATASET_DIR / "metadata.csv"
 CACHE_DIR = ROOT / "models" / "_cache"
 CHECKPOINT_DIR = ROOT / "models" / "_checkpoints"
+WEIGHTS_DIR = ROOT / "models" / "_weights"
 
 
 def set_seed(seed: int = 42) -> None:
@@ -48,25 +49,37 @@ def build_label_maps(words: list[str]) -> tuple[dict[str, int], dict[int, str]]:
 
 def stratified_split(
     df: pd.DataFrame,
-    val_ratio: float = 0.2,
+    val_ratio: float = 0.15,
+    test_ratio: float = 0.15,
     seed: int = 42,
-    min_val_per_class: int = 1,
-) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Hold out ~val_ratio per class; if class has 1 clip, put it in train only."""
+) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+    """Stratified train / val / test. Tiny classes (<3) go train-only (or train+val if n==2)."""
     rng = np.random.default_rng(seed)
-    train_idx, val_idx = [], []
-    for word, g in df.groupby("word"):
+    train_idx, val_idx, test_idx = [], [], []
+    for _, g in df.groupby("word"):
         idx = g.index.to_numpy()
         rng.shuffle(idx)
         n = len(idx)
-        if n < 2:
+        if n == 1:
             train_idx.extend(idx.tolist())
             continue
-        n_val = max(min_val_per_class, int(round(n * val_ratio)))
-        n_val = min(n_val, n - 1)
-        val_idx.extend(idx[:n_val].tolist())
-        train_idx.extend(idx[n_val:].tolist())
-    return df.loc[train_idx].reset_index(drop=True), df.loc[val_idx].reset_index(drop=True)
+        if n == 2:
+            train_idx.append(int(idx[0]))
+            val_idx.append(int(idx[1]))
+            continue
+        n_test = max(1, int(round(n * test_ratio)))
+        n_val = max(1, int(round(n * val_ratio)))
+        if n_test + n_val >= n:
+            n_test = 1
+            n_val = 1
+        test_idx.extend(idx[:n_test].tolist())
+        val_idx.extend(idx[n_test : n_test + n_val].tolist())
+        train_idx.extend(idx[n_test + n_val :].tolist())
+    return (
+        df.loc[train_idx].reset_index(drop=True),
+        df.loc[val_idx].reset_index(drop=True),
+        df.loc[test_idx].reset_index(drop=True),
+    )
 
 
 def save_json(obj, path: Path) -> None:
@@ -77,3 +90,18 @@ def save_json(obj, path: Path) -> None:
 def accuracy(logits: torch.Tensor, y: torch.Tensor) -> float:
     pred = logits.argmax(dim=-1)
     return float((pred == y).float().mean().item())
+
+
+def configure_l40s() -> torch.device:
+    """Enable TF32 / cudnn benchmark for NVIDIA L40S (Ada, high throughput)."""
+    torch.backends.cuda.matmul.allow_tf32 = True
+    torch.backends.cudnn.allow_tf32 = True
+    torch.backends.cudnn.benchmark = True
+    if hasattr(torch, "set_float32_matmul_precision"):
+        torch.set_float32_matmul_precision("high")
+    if not torch.cuda.is_available():
+        print("WARNING: CUDA not available — falling back to CPU")
+        return torch.device("cpu")
+    props = torch.cuda.get_device_properties(0)
+    print(f"GPU: {props.name}  VRAM={props.total_memory / 1e9:.1f} GB")
+    return torch.device("cuda")

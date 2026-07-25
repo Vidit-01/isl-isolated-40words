@@ -50,7 +50,7 @@ def main() -> None:
     df = load_metadata(min_clips=args.min_clips)
     w2i, i2w = build_label_maps(df["word"].tolist())
     df["y"] = df["word"].map(w2i)
-    train_df, val_df = stratified_split(df, seed=args.seed)
+    train_df, val_df, _test_df = stratified_split(df, seed=args.seed)
 
     processor = AutoImageProcessor.from_pretrained(args.model_name)
     model = AutoModelForVideoClassification.from_pretrained(
