@@ -92,11 +92,12 @@ def accuracy(logits: torch.Tensor, y: torch.Tensor) -> float:
     return float((pred == y).float().mean().item())
 
 
-def configure_l40s() -> torch.device:
-    """Enable TF32 / cudnn benchmark for NVIDIA L40S (Ada, high throughput)."""
+def configure_cuda_gpu() -> torch.device:
+    """Enable cuDNN benchmark / matmul settings for NVIDIA GPUs (T4, etc.)."""
+    torch.backends.cudnn.benchmark = True
+    # TF32 is Ampere+; harmless no-op on T4 (Turing)
     torch.backends.cuda.matmul.allow_tf32 = True
     torch.backends.cudnn.allow_tf32 = True
-    torch.backends.cudnn.benchmark = True
     if hasattr(torch, "set_float32_matmul_precision"):
         torch.set_float32_matmul_precision("high")
     if not torch.cuda.is_available():
@@ -105,3 +106,8 @@ def configure_l40s() -> torch.device:
     props = torch.cuda.get_device_properties(0)
     print(f"GPU: {props.name}  VRAM={props.total_memory / 1e9:.1f} GB")
     return torch.device("cuda")
+
+
+# Backwards-compatible aliases
+configure_t4 = configure_cuda_gpu
+configure_l40s = configure_cuda_gpu

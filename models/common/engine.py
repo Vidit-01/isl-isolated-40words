@@ -1,4 +1,4 @@
-"""Training / evaluation engine with AMP (L40S-friendly)."""
+"""Training / evaluation engine with AMP (T4-friendly FP16)."""
 from __future__ import annotations
 
 from pathlib import Path
