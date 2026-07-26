@@ -2,7 +2,6 @@
 raw_datasets/
 hf_isl_upload/
 models/_cache/
-models/_checkpoints/
 **/__pycache__/
 *.pyc
 .Python
