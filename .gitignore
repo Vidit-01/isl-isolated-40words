@@ -3,7 +3,6 @@ raw_datasets/
 hf_isl_upload/
 models/_cache/
 models/_checkpoints/
-models/_weights/
 **/__pycache__/
 *.pyc
 .Python
