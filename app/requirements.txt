@@ -1,0 +1,6 @@
+# GUI OpenCV (imshow) — overrides headless if both installed
+opencv-python>=4.8.0
+mediapipe>=0.10.9
+torch>=2.1.0
+numpy>=1.24.0
+pyttsx3>=2.90

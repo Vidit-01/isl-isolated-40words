@@ -19,7 +19,15 @@ def _lm_to_array(landmarks, n: int) -> np.ndarray:
     out = np.zeros((n, 3), dtype=np.float32)
     if landmarks is None:
         return out
-    for i, lm in enumerate(landmarks.landmark[:n]):
+    # Classic solutions: object with .landmark list
+    # Tasks API: plain list of landmarks (or Nested under .landmark)
+    seq = landmarks.landmark if hasattr(landmarks, "landmark") else landmarks
+    if seq is None:
+        return out
+    # Some Tasks results nest an extra list level for multi-face
+    if len(seq) > 0 and isinstance(seq[0], (list, tuple)):
+        seq = seq[0]
+    for i, lm in enumerate(list(seq)[:n]):
         out[i] = (lm.x, lm.y, lm.z)
     return out
 
@@ -80,6 +88,84 @@ def _silence_mediapipe_logs() -> None:
     warnings.filterwarnings("ignore", message=".*Feedback manager.*")
 
 
+def frame_to_landmark_vec(
+    frame_bgr: np.ndarray,
+    holistic,
+    max_side: int = 480,
+) -> np.ndarray:
+    """One BGR frame -> normalized landmark vector (FEAT_DIM,)."""
+    frame = frame_bgr
+    h, w = frame.shape[:2]
+    if max(h, w) > max_side:
+        scale = max_side / max(h, w)
+        frame = cv2.resize(frame, (int(w * scale), int(h * scale)))
+    rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    res = holistic.process(rgb)
+    pose = _lm_to_array(res.pose_landmarks, N_POSE)
+    lh = _lm_to_array(res.left_hand_landmarks, N_HAND)
+    rh = _lm_to_array(res.right_hand_landmarks, N_HAND)
+    face = _lm_to_array(res.face_landmarks, N_FACE)
+    raw = np.concatenate([pose, lh, rh, face], axis=0)
+    return normalize_landmarks(raw).reshape(-1)
+
+
+def landmarks_from_frames(
+    frames_bgr: list[np.ndarray],
+    num_frames: int = 30,
+    max_side: int = 480,
+    holistic=None,
+) -> np.ndarray:
+    """Build (T, FEAT_DIM) from a list of BGR frames (live camera buffer)."""
+    _silence_mediapipe_logs()
+
+    own = holistic is None
+    if own:
+        # Prefer app HolisticSession (solutions or Tasks); fallback to classic import
+        try:
+            import sys
+            from pathlib import Path
+
+            root = Path(__file__).resolve().parents[2]
+            if str(root) not in sys.path:
+                sys.path.insert(0, str(root))
+            from app.holistic import HolisticSession
+
+            holistic = HolisticSession(model_complexity=0)
+        except Exception:
+            import mediapipe as mp
+
+            if not hasattr(mp, "solutions"):
+                raise RuntimeError(
+                    "MediaPipe Holistic unavailable. Install mediapipe<0.10.15 on Python 3.10–3.12, "
+                    "or use app.holistic.HolisticSession (Tasks API)."
+                )
+            holistic = mp.solutions.holistic.Holistic(
+                static_image_mode=False,
+                model_complexity=0,
+                refine_face_landmarks=False,
+                min_detection_confidence=0.5,
+                min_tracking_confidence=0.5,
+            )
+    try:
+        n = len(frames_bgr)
+        if n == 0:
+            return np.zeros((num_frames, FEAT_DIM), dtype=np.float32)
+        wanted = sample_frame_indices(n, num_frames)
+        seq = np.zeros((num_frames, FEAT_DIM), dtype=np.float32)
+        last = np.zeros(FEAT_DIM, dtype=np.float32)
+        cache: dict[int, np.ndarray] = {}
+        for t, fi in enumerate(wanted.tolist()):
+            fi = int(fi)
+            if fi not in cache:
+                cache[fi] = frame_to_landmark_vec(frames_bgr[fi], holistic, max_side=max_side)
+            last = cache[fi]
+            seq[t] = last
+        return seq
+    finally:
+        if own and hasattr(holistic, "close"):
+            holistic.close()
+
+
 def extract_video_landmarks(
     video_path: str | Path,
     num_frames: int = 30,
@@ -87,55 +173,20 @@ def extract_video_landmarks(
 ) -> np.ndarray:
     """Return (T, FEAT_DIM) normalized landmark sequence."""
     _silence_mediapipe_logs()
-    import mediapipe as mp
 
     path = Path(video_path)
     cap = cv2.VideoCapture(str(path))
     if not cap.isOpened():
         raise RuntimeError(f"Cannot open video: {path}")
 
-    total = int(cap.get(cv2.CAP_PROP_FRAME_COUNT) or 0)
-    indices = set(sample_frame_indices(total if total > 0 else num_frames, num_frames).tolist())
-    wanted = sample_frame_indices(total if total > 0 else num_frames, num_frames)
-
-    holistic = mp.solutions.holistic.Holistic(
-        static_image_mode=False,
-        model_complexity=1,
-        refine_face_landmarks=False,
-        min_detection_confidence=0.5,
-        min_tracking_confidence=0.5,
-    )
-
-    by_idx: dict[int, np.ndarray] = {}
-    i = 0
+    frames: list[np.ndarray] = []
     while True:
         ok, frame = cap.read()
         if not ok:
             break
-        if i in indices:
-            h, w = frame.shape[:2]
-            if max(h, w) > max_side:
-                scale = max_side / max(h, w)
-                frame = cv2.resize(frame, (int(w * scale), int(h * scale)))
-            rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-            res = holistic.process(rgb)
-            pose = _lm_to_array(res.pose_landmarks, N_POSE)
-            lh = _lm_to_array(res.left_hand_landmarks, N_HAND)
-            rh = _lm_to_array(res.right_hand_landmarks, N_HAND)
-            face = _lm_to_array(res.face_landmarks, N_FACE)
-            raw = np.concatenate([pose, lh, rh, face], axis=0)
-            by_idx[i] = normalize_landmarks(raw).reshape(-1)
-        i += 1
+        frames.append(frame)
     cap.release()
-    holistic.close()
-
-    seq = np.zeros((num_frames, FEAT_DIM), dtype=np.float32)
-    last = np.zeros(FEAT_DIM, dtype=np.float32)
-    for t, fi in enumerate(wanted.tolist()):
-        if fi in by_idx:
-            last = by_idx[fi]
-        seq[t] = last
-    return seq
+    return landmarks_from_frames(frames, num_frames=num_frames, max_side=max_side)
 
 
 def cache_key(video_path: str | Path, num_frames: int) -> str:

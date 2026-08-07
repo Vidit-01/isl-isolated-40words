@@ -4,6 +4,7 @@ hf_isl_upload/
 models/_cache/
 models/_checkpoints/
 models/_weights/
+cache/
 **/__pycache__/
 *.pyc
 .Python
