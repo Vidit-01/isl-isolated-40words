@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import os
+import threading
 import time
 
 os.environ.setdefault("GLOG_minloglevel", "3")
@@ -15,6 +16,7 @@ from .config import SUPPORTED_MODELS, AppConfig
 from .display import draw_overlay
 from .holistic import HolisticSession
 from .predictor import Prediction, load_predictor
+from .sentence_service import SentenceFormationError, formulate_english_sentence
 from .speech import Speaker
 
 
@@ -36,6 +38,38 @@ def run_live(cfg: AppConfig) -> None:
     # require the same word twice in a row before speaking (stability)
     pending_word: str | None = None
     pending_count = 0
+    unique_signs: list[str] = []
+    current_sentence = ""
+    sentence_thread: threading.Thread | None = None
+    sentence_generation = 0
+
+    def process_sentence_task(words: list[str], generation: int) -> None:
+        nonlocal current_sentence
+        try:
+            result = formulate_english_sentence(words)
+            print(f"[sentence] {result}")
+        except SentenceFormationError as exc:
+            result = f"Sentence error: {exc}"
+            print(f"[sentence] {exc}")
+        if generation == sentence_generation:
+            current_sentence = result
+
+    def start_sentence_processing() -> None:
+        nonlocal current_sentence, sentence_generation, sentence_thread, unique_signs
+        if not unique_signs or (sentence_thread and sentence_thread.is_alive()):
+            return
+        words = list(unique_signs)
+        unique_signs = []
+        current_sentence = "Processing sentence..."
+        print(f"[sentence] pause detected; recognized words: {', '.join(words)}")
+        sentence_generation += 1
+        sentence_thread = threading.Thread(
+            target=process_sentence_task,
+            args=(words, sentence_generation),
+            name="sentence-worker",
+            daemon=True,
+        )
+        sentence_thread.start()
 
     print("Auto-speak ON. Controls: SPACE=predict now  M=switch model  C=clear  Q=quit")
     try:
@@ -53,8 +87,18 @@ def run_live(cfg: AppConfig) -> None:
             if buf.full and (now - last_infer_t) >= auto_interval:
                 pred = predictor.predict_frames(buf.as_list())
                 last_infer_t = now
-                status = f"{pred.word}  ({pred.confidence:.0%})"
-                if pred.confidence >= cfg.conf_threshold:
+                if not pred.hands_detected:
+                    status = "No movement detected"
+                    pending_word = None
+                    pending_count = 0
+                    start_sentence_processing()
+                elif pred.confidence >= cfg.conf_threshold:
+                    status = f"{pred.word}  ({pred.confidence:.0%})"
+                    # Sentence collection does not require the extra speech
+                    # stability match; one confident recognition is enough.
+                    if pred.word not in unique_signs:
+                        unique_signs.append(pred.word)
+                        print(f"[sentence] buffered word: {pred.word}")
                     if pred.word == pending_word:
                         pending_count += 1
                     else:
@@ -76,6 +120,7 @@ def run_live(cfg: AppConfig) -> None:
                 pred=pred,
                 status=status,
                 conf_threshold=cfg.conf_threshold,
+                sentence=current_sentence,
             )
             cv2.imshow(cfg.window_name, overlay)
             key = cv2.waitKey(1) & 0xFF
@@ -87,6 +132,9 @@ def run_live(cfg: AppConfig) -> None:
                 pred = None
                 pending_word = None
                 pending_count = 0
+                unique_signs = []
+                current_sentence = ""
+                sentence_generation += 1
                 status = "Buffer cleared"
             if key == ord(" "):
                 if len(buf) < 8:
@@ -116,6 +164,7 @@ def run_live(cfg: AppConfig) -> None:
                         pred=pred,
                         status=status,
                         conf_threshold=cfg.conf_threshold,
+                        sentence=current_sentence,
                     ),
                 )
                 cv2.waitKey(1)

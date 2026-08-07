@@ -17,6 +17,7 @@ def draw_overlay(
     pred: Optional[Prediction],
     status: str,
     conf_threshold: float,
+    sentence: str = "",
 ) -> np.ndarray:
     out = frame.copy()
     h, w = out.shape[:2]
@@ -43,6 +44,20 @@ def draw_overlay(
         1,
         cv2.LINE_AA,
     )
+
+    if sentence:
+        cv2.rectangle(out, (0, 78), (w, 112), (30, 30, 30), -1)
+        shown = sentence if len(sentence) <= 52 else f"{sentence[:49]}..."
+        cv2.putText(
+            out,
+            f"Sentence: {shown}",
+            (16, 101),
+            cv2.FONT_HERSHEY_SIMPLEX,
+            0.5,
+            (120, 230, 180),
+            1,
+            cv2.LINE_AA,
+        )
 
     # buffer bar
     bar_w = int((w - 32) * min(max(buffer_fill, 0.0), 1.0))

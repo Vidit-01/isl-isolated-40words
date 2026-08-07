@@ -18,6 +18,15 @@ Weights expected under `weights/` (already extracted if you have the zips):
 
 First run may download `cache/holistic_landmarker.task` (MediaPipe Tasks model).
 
+Set a Gemini API key to enable automatic English sentence formation after you
+lower your hands:
+
+```powershell
+$env:GEMINI_API_KEY = "your-api-key"
+```
+
+The optional `GEMINI_MODEL` environment variable overrides the default model.
+
 ## Run
 
 ```powershell

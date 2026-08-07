@@ -16,7 +16,7 @@ import torch.nn as nn
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "models"))
 
-from common.landmarks import FEAT_DIM, landmarks_from_frames  # noqa: E402
+from common.landmarks import FEAT_DIM, N_HAND, N_POSE, landmarks_from_frames  # noqa: E402
 from landmark_tcn.model import LandmarkTCN  # noqa: E402
 from mediapipe_transformer.model import LandmarkTransformer  # noqa: E402
 
@@ -26,6 +26,7 @@ class Prediction:
     word: str
     confidence: float
     probs: Optional[np.ndarray] = None
+    hands_detected: bool = True
 
 
 class Predictor(ABC):
@@ -106,12 +107,26 @@ class LandmarkPredictor(Predictor):
             num_frames=self.num_frames,
             holistic=self.holistic,
         )
+        # Hand landmarks are already part of the model input. Reading their
+        # presence here adds pause metadata without changing inference data.
+        hand_start = N_POSE * 3
+        hand_end = (N_POSE + (2 * N_HAND)) * 3
+        # A pause is based on the newest quarter of the rolling window. Older
+        # frames may still contain the sign that was just completed.
+        recent_frame_count = max(3, self.num_frames // 4)
+        recent_hands = seq[-recent_frame_count:, hand_start:hand_end]
+        hands_detected = bool(np.any(recent_hands != 0))
         x = torch.from_numpy(seq).unsqueeze(0).to(self.device)  # (1, T, F)
         logits = self.model(x)
         probs = torch.softmax(logits, dim=-1)[0].detach().cpu().numpy()
         idx = int(probs.argmax())
         word = self.id_to_word.get(idx, str(idx))
-        return Prediction(word=word, confidence=float(probs[idx]), probs=probs)
+        return Prediction(
+            word=word,
+            confidence=float(probs[idx]),
+            probs=probs,
+            hands_detected=hands_detected,
+        )
 
 
 def load_predictor(

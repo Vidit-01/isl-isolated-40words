@@ -71,3 +71,42 @@
 2026-07-25 15:20:23,888 | INFO | ISLRTC_dictionary local scan: 16 videos
 2026-07-25 15:20:23,973 | INFO | After dedup: 642 kept, 20 dups
 2026-07-25 15:41:09,680 | INFO | Reports written under C:\Users\Vidit\OneDrive\Desktop\IPD\reports
+2026-08-07 20:38:23,654 | INFO | === ISL Dataset Agent start 2026-08-07T15:08:23Z ===
+2026-08-07 20:38:23,657 | INFO | Wrote inventory (9 datasets) -> C:\Users\Rushabh\Desktop\ipd\isl-isolated-40words\reports\dataset_inventory.csv
+2026-08-07 20:38:23,683 | INFO | Target words (40): ['hello', 'goodbye', 'thank you', 'sorry', 'please', 'yes', 'no', 'help', 'stop', 'okay', 'me', 'you', 'he', 'she', 'mother', 'father', 'brother', 'sister', 'friend', 'teacher', 'student', 'home', 'school', 'hospital', 'market', 'eat', 'drink', 'water', 'food', 'tea', 'come', 'go', 'sit', 'stand', 'read', 'write', 'what', 'where', 'when', 'today']
+2026-08-07 20:38:23,717 | INFO | INCLUDE category Greetings: 2 zip parts
+2026-08-07 20:38:23,719 | INFO | curl download (1/3): https://zenodo.org/api/records/4010759/files/Greetings_1of2.zip/content -> C:\Users\Rushabh\Desktop\ipd\isl-isolated-40words\raw_datasets\INCLUDE\Greetings_1of2.zip
+2026-08-07 20:41:53,228 | INFO | === ISL Dataset Agent start 2026-08-07T15:11:53Z ===
+2026-08-07 20:41:53,231 | INFO | Wrote inventory (9 datasets) -> C:\Users\Rushabh\Desktop\ipd\isl-isolated-40words\reports\dataset_inventory.csv
+2026-08-07 20:41:53,232 | INFO | Target words (40): ['hello', 'goodbye', 'thank you', 'sorry', 'please', 'yes', 'no', 'help', 'stop', 'okay', 'me', 'you', 'he', 'she', 'mother', 'father', 'brother', 'sister', 'friend', 'teacher', 'student', 'home', 'school', 'hospital', 'market', 'eat', 'drink', 'water', 'food', 'tea', 'come', 'go', 'sit', 'stand', 'read', 'write', 'what', 'where', 'when', 'today']
+2026-08-07 20:41:53,233 | INFO | INCLUDE category Greetings: 2 zip parts
+2026-08-07 20:41:53,234 | INFO | Already present: C:\Users\Rushabh\Desktop\ipd\isl-isolated-40words\raw_datasets\INCLUDE\Greetings_1of2.zip
+2026-08-07 20:41:53,234 | ERROR | Extract failed Greetings_1of2.zip: File is not a zip file
+2026-08-07 20:41:53,236 | INFO | curl download (1/3): https://zenodo.org/api/records/4010759/files/Greetings_2of2.zip/content -> C:\Users\Rushabh\Desktop\ipd\isl-isolated-40words\raw_datasets\INCLUDE\Greetings_2of2.zip
+2026-08-07 20:49:28,508 | INFO | Extracted Greetings_2of2.zip
+2026-08-07 20:49:32,127 | INFO | INCLUDE match thank you <- MVI_0006.MOV (exact)
+2026-08-07 20:49:32,444 | INFO | INCLUDE match thank you <- MVI_0007.MOV (exact)
+2026-08-07 20:49:32,734 | INFO | INCLUDE match thank you <- MVI_0008.MOV (exact)
+2026-08-07 20:49:33,033 | INFO | INCLUDE match thank you <- MVI_0058.MOV (exact)
+2026-08-07 20:49:33,341 | INFO | INCLUDE match thank you <- MVI_0059.MOV (exact)
+2026-08-07 20:49:33,621 | INFO | INCLUDE match thank you <- MVI_0060.MOV (exact)
+2026-08-07 20:49:33,903 | INFO | INCLUDE match thank you <- MVI_0060_.MOV (exact)
+2026-08-07 20:49:34,195 | INFO | INCLUDE match thank you <- MVI_0061.MOV (exact)
+2026-08-07 20:49:34,495 | INFO | INCLUDE match thank you <- MVI_0062.MOV (exact)
+2026-08-07 20:49:34,790 | INFO | INCLUDE match thank you <- MVI_0063.MOV (exact)
+2026-08-07 20:49:35,105 | INFO | INCLUDE match thank you <- MVI_0111.MOV (exact)
+2026-08-07 20:49:35,410 | INFO | INCLUDE match thank you <- MVI_0112.MOV (exact)
+2026-08-07 20:49:35,720 | INFO | INCLUDE match thank you <- MVI_0113.MOV (exact)
+2026-08-07 20:49:36,020 | INFO | INCLUDE match thank you <- MVI_9948.MOV (exact)
+2026-08-07 20:49:36,319 | INFO | INCLUDE match thank you <- MVI_9949.MOV (exact)
+2026-08-07 20:49:36,613 | INFO | INCLUDE match thank you <- MVI_9950.MOV (exact)
+2026-08-07 20:49:36,909 | INFO | INCLUDE match thank you <- MVI_9951.MOV (exact)
+2026-08-07 20:49:37,177 | INFO | INCLUDE match thank you <- MVI_9984.MOV (exact)
+2026-08-07 20:49:37,448 | INFO | INCLUDE match thank you <- MVI_9985.MOV (exact)
+2026-08-07 20:49:37,707 | INFO | INCLUDE match thank you <- MVI_9986.MOV (exact)
+2026-08-07 20:49:37,983 | INFO | INCLUDE match thank you <- MVI_9987.MOV (exact)
+2026-08-07 20:49:37,987 | INFO | INCLUDE contributed 21 videos
+2026-08-07 20:49:37,989 | ERROR | CISLR pipeline error: No module named 'pandas'
+2026-08-07 20:49:37,991 | ERROR | ISL500 download path failed: No module named 'huggingface_hub'
+2026-08-07 20:49:37,991 | INFO | ISL500 contributed 0 videos
+2026-08-07 20:49:37,995 | INFO | After dedup: 21 kept, 0 removed

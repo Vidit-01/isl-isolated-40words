@@ -1,0 +1,132 @@
+# 🎯 Project Overview & Objective
+
+You are an expert AI software engineer. Your task is to implement two new features—**Pause-Based Sentence Formation** and **Multilingual Speech Translation (with Text-to-Speech)**—into an existing Flask-based Sign Language Recognition application. 
+
+The existing recognition pipeline (MediaPipe + TFLite Transformer) works flawlessly and **MUST NOT BE MODIFIED**. Your goal is strictly to add post-processing logic and update the UI workflow.
+
+# 🏗️ Understanding the Existing Architecture
+
+Before you begin, understand how the project currently functions:
+- **Backend (`web_app.py`)**: Uses OpenCV to capture frames, runs them through MediaPipe Holistic, and accumulates landmarks. Every 3 seconds, the accumulated data is padded and passed to a Transformer model (`model.tflite`). If a valid sign is predicted, it is appended to a global `unique_signs` list. 
+- **Sentence Generation**: Currently, the Gemini API is triggered manually via a `/toggle_message` endpoint to construct a sentence from `unique_signs`.
+- **Frontend (`templates/index.html` & `static/app.js`)**: Polls the `/status` endpoint every 500ms to fetch `current_sign`, `words`, and `current_sentence`. It has a manual "Translate to Sentence" button which triggers `/toggle_message`.
+
+# 🚀 Feature Requirements
+
+### Feature 1: Pause-Based Sentence Formation
+- **Remove Manual Translation**: The user should no longer need to click a button to formulate the sentence.
+- **Pause Detection**: The gesture model currently predicts a sign every 3 seconds. If the model outputs `"No Movement Detected"` (or `""`, `"TV"`), and there are words buffered in `unique_signs`, you must assume the user has finished their sentence.
+- **Automatic Generation**: Upon detecting this pause, automatically send the buffered words to the Gemini API to construct a grammatically correct English sentence.
+
+### Feature 2: Multilingual Speech Translation & TTS
+- **Translation**: After the English sentence is formed, translate it into a target language selected by the user. Support English (`en`) and Hindi (`hi`) initially, but design the function so adding Marathi, Gujarati, Tamil, Telugu, and Bengali is trivial.
+- **Text-to-Speech (TTS)**: Convert the final translated sentence into an audio file using the `gTTS` library.
+- **Frontend Playback**: The frontend must automatically play this generated audio.
+
+---
+
+# 🛠️ Implementation Strategy & Execution Plan
+
+Please implement these features strictly following the sequence below. **Do not modify the TFLite inference logic.**
+
+## 1. Create a Dedicated Service Module (`translation_service.py`)
+To maintain a clean modular architecture, do not bloat `web_app.py`. Create a new file named `translation_service.py` in the same directory.
+- **Imports**: `google.generativeai`, `gTTS`, `os`, `uuid`, `glob`, `time`.
+- **Function 1: `formulate_english_sentence(words: list)`**:
+  - Move the existing Gemini prompt logic from `web_app.py` into this function.
+  - Returns the constructed English sentence string.
+- **Function 2: `translate_text(text: str, target_lang: str)`**:
+  - If `target_lang == 'en'`, return the text as-is.
+  - Otherwise, create a simple Gemini call to translate the English text into the target language.
+- **Function 3: `generate_audio(text: str, target_lang: str)`**:
+  - Ensure the directory `static/audio` exists.
+  - Use `gTTS(text=text, lang=target_lang)` to generate audio.
+  - Save the file to `static/audio/` with a unique UUID filename (e.g., `static/audio/b3a1...mp3`).
+  - Return the relative URL path (e.g., `/static/audio/b3a1...mp3`).
+- **Function 4: `cleanup_old_audio(max_age_seconds=300)`**:
+  - Add a utility function to delete audio files older than 5 minutes so the server storage doesn't bloat. Call this inside `generate_audio()`.
+
+## 2. Update Backend Global State & Endpoints (`web_app.py`)
+- **Imports**: Import the functions from `translation_service.py` and `threading`. Add `gTTS` to `requirements.txt`.
+- **Global Variables**: Add a global variable `target_language = 'en'` and `current_audio_url = ""`.
+- **New Route**: Create a `@app.route('/set_language', methods=['POST'])` endpoint to update the `target_language` global based on the JSON payload.
+- **Modify Route `/status`**: Include `audio_url: current_audio_url` in the JSON response.
+
+## 3. Implement Pause Detection & Background Threading (CRITICAL)
+Calling Gemini (twice) and generating an MP3 takes 2-4 seconds. If done synchronously inside the `gen_frames()` generator loop, the video feed will freeze. You **MUST** use background threading.
+
+- **Create a processing wrapper in `web_app.py`**:
+  ```python
+  def process_sentence_task(words, lang):
+      global current_sentence, current_audio_url
+      # 1. Formulate English sentence
+      eng_sentence = translation_service.formulate_english_sentence(words)
+      # 2. Translate to target language
+      final_sentence = translation_service.translate_text(eng_sentence, lang)
+      # 3. Generate audio
+      audio_url = translation_service.generate_audio(final_sentence, lang)
+      # 4. Update globals
+      current_sentence = final_sentence
+      current_audio_url = audio_url
+  ```
+
+- **Update `gen_frames()`**:
+  Locate the 3-second prediction block: `if current_time - last_prediction_time >= 3:`
+  Update the `if sign_name == "" or sign_name == "TV":` logic to:
+  ```python
+  if sign_name == "" or sign_name == "TV":
+      current_sign = "No Movement Detected"
+      # Pause Detected!
+      if len(unique_signs) > 0:
+          current_sentence = "Processing sentence..."
+          current_audio_url = "" # Reset audio url so frontend doesn't play old audio
+          # Trigger background processing
+          threading.Thread(target=process_sentence_task, args=(list(unique_signs), target_language)).start()
+          unique_signs = [] # Clear immediately
+  else:
+      current_sign = sign_name
+      if sign_name not in unique_signs:
+          unique_signs.append(sign_name)
+  ```
+
+## 4. Update the UI Workflow (`templates/index.html`)
+- **Language Selector**: Remove the "Translate to Sentence" button inside the `.controls` div. Replace it with a modern dropdown:
+  ```html
+  <select id="language_selector" class="dropdown">
+      <option value="en" selected>English</option>
+      <option value="hi">Hindi</option>
+  </select>
+  ```
+- **Audio Player**: Add a hidden audio element to the bottom of the page:
+  ```html
+  <audio id="tts_player" autoplay></audio>
+  ```
+
+## 5. Update Frontend Logic (`static/app.js`)
+- **Event Listeners**: 
+  - Add an `onchange` event listener to `language_selector` that makes a POST request to `/set_language`.
+  - Remove the old "Translate" button click listener and `/toggle_message` logic.
+- **State tracking**:
+  - Add `let currentAudioUrl = '';` at the top of the file.
+- **Audio Playback in Polling Loop**: 
+  - In the `fetchStatus()` polling loop, update the `current_sentence` UI.
+  - Check if `data.audio_url` has changed since the last poll.
+  - If a new URL is detected (and it is not empty):
+    ```javascript
+    if (data.audio_url && data.audio_url !== currentAudioUrl) {
+        currentAudioUrl = data.audio_url;
+        const player = document.getElementById('tts_player');
+        player.src = currentAudioUrl;
+        player.play().catch(e => console.error("Auto-play blocked:", e));
+    }
+    ```
+
+---
+
+# 🧪 Verification Checklist
+- [ ] Prediction interval remains exactly 3 seconds, video does not freeze during sentence translation.
+- [ ] Dropping hands accurately triggers sentence processing after a 3-second interval.
+- [ ] `static/audio` directory successfully saves `.mp3` files and auto-deletes files older than 5 minutes.
+- [ ] Audio plays automatically on the frontend (Note: you may need to click the page or change the language dropdown once before the browser allows auto-play).
+
+Take a deep breath and begin. Output the necessary code blocks file by file, clearly indicating where modifications are made. Ensure all imports are accurate.
